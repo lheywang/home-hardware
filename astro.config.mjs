@@ -5,8 +5,8 @@ import starlight from '@astrojs/starlight';
 // https://astro.build/config
 export default defineConfig({
 
-    site: 'https://lheywang.github.io',
-    base: '/home-hardware',
+    site: 'https://https://home-hardware.app/',
+    // base: '/home-hardware',
 
 	integrations: [
 		starlight({
