@@ -1,0 +1,127 @@
+---
+// src/components/Auteur.astro
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+
+interface Props {
+  pseudo: string;
+  nom?: string;
+  role?: string;
+  avatar: ImageMetadata | string;
+  date?: string | Date;
+}
+
+const { pseudo, nom, role = "Auteur", avatar, date } = Astro.props;
+const isLocalImage = typeof avatar === 'object';
+
+// Prise en compte du préfixe base ('/home-hardware') pour les images du dossier public
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, '');
+const avatarSrc = typeof avatar === 'string' && avatar.startsWith('/')
+  ? `${basePath}${avatar}`
+  : avatar;
+
+// Formatage de la date en français
+let dateAffichee: string | null = null;
+if (date) {
+  const d = typeof date === 'string' ? new Date(date) : date;
+  dateAffichee = new Intl.DateTimeFormat('fr-FR', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric'
+  }).format(d);
+}
+---
+
+<aside class="auteur-encart">
+  <div class="avatar-wrapper">
+    {isLocalImage ? (
+      <Image src={avatar as ImageMetadata} alt={pseudo} width={44} height={44} class="avatar" />
+    ) : (
+      <img src={avatarSrc as string} alt={pseudo} class="avatar" />
+    )}
+  </div>
+  <div class="infos">
+    <div class="ligne-titre">
+      <span class="nom">{nom || pseudo}</span>
+      <span class="badge">{role}</span>
+    </div>
+    <div class="ligne-meta">
+      <span class="pseudo">@{pseudo.replace(/^@/, '')}</span>
+      {dateAffichee && (
+        <>
+          <span class="separateur">•</span>
+          <time datetime={typeof date === 'string' ? date : date.toISOString()} class="date">
+            {dateAffichee}
+          </time>
+        </>
+      )}
+    </div>
+  </div>
+</aside>
+
+<style>
+  .auteur-encart {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.65rem 0.9rem;
+    margin: 1.5rem 0;
+    background: var(--sl-color-gray-6);
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 8px;
+  }
+
+  .avatar-wrapper {
+    display: flex;
+    flex-shrink: 0;
+  }
+
+  .avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--sl-color-accent);
+  }
+
+  .infos {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .ligne-titre {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    line-height: 1.2;
+  }
+
+  .nom {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--sl-color-white);
+  }
+
+  .badge {
+    font-size: 0.7rem;
+    padding: 0.1rem 0.35rem;
+    border-radius: 4px;
+    background: var(--sl-color-accent-low);
+    color: var(--sl-color-accent-high);
+    font-family: var(--sl-font-mono);
+  }
+
+  .ligne-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+    color: var(--sl-color-gray-3);
+    font-family: var(--sl-font-mono);
+  }
+
+  .separateur {
+    opacity: 0.5;
+  }
+</style>

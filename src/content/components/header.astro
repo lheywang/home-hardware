@@ -1,0 +1,30 @@
+---
+// src/components/ArticleHeader.astro
+import fs from 'node:fs';
+import path from 'node:path';
+import { parse } from 'smol-toml';
+import Auteur from './autor.astro';
+
+interface Props {
+  tomlPath: string;
+}
+
+const { tomlPath } = Astro.props;
+const fullPath = path.resolve('src/content/docs', tomlPath);
+
+let meta: any = {};
+if (fs.existsSync(fullPath)) {
+  const content = fs.readFileSync(fullPath, 'utf-8');
+  meta = parse(content);
+}
+---
+
+{meta.author && (
+  <Auteur
+    pseudo={meta.author.pseudo}
+    nom={meta.author.name}
+    role={meta.author.role}
+    avatar={meta.author.avatar}
+    date={meta.date}
+  />
+)}

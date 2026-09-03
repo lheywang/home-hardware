@@ -1,0 +1,14 @@
+title = "Guide d'achat : Cartes mères"
+slug = "articles/motherboard/motherboard"
+date = "2023-10-08"
+
+[author]
+pseudo = "l.heywang"
+name = "l.heywang"
+role = "Admin / Helper"
+avatar = "/avatars/jeff.png"
+
+# Données pour /home/bot
+title_keyword = "Carte-Mère"
+aux_keywords = ["vrm", "pcie", "chipset"]
+misc_keywords = ["pcie", "mcu", "ethernet", "usb"]

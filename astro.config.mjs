@@ -4,21 +4,36 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
+
+    site: 'https://lheywang.github.io',
+    base: '/home-hardware',
+
 	integrations: [
 		starlight({
-			title: 'My Docs',
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
+			title: 'home-hardware',
+
+            defaultLocale: 'root',
+            locales: {
+                root: {
+                    label: 'Français',
+                    lang: 'fr',
+                },
+            },
+
+			social: [
+                { icon: 'github', label: 'GitHub', href: 'https://github.com/lheywang/home-hardware' }, 
+                {icon: 'discord', label: 'Discord', href: 'https://discord.gg/R9HNVnBs6s'}
+            ],
+
+            customCss: [
+                './src/styles/custom.css',
+            ],
+
 			sidebar: [
 				{
 					label: 'Guides',
-					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', slug: 'guides/example' },
-					],
-				},
-				{
-					label: 'Reference',
-					items: [{ autogenerate: { directory: 'reference' } }],
+                    items: [{ autogenerate: { "directory": "articles" } }]
+					
 				},
 			],
 		}),
