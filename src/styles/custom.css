@@ -6,3 +6,28 @@
   padding-left: 1rem;
   margin: 1.5rem 0 2rem 0;
 }
+
+.split-view {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+  align-items: start;
+}
+
+@media (min-width: 50rem) {
+  .split-view {
+    grid-template-columns: 1fr 1.2fr;
+  }
+}
+
+.split-view > :first-child {
+  margin: 0;
+}
+
+.split-view img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  border: 1px solid var(--sl-color-gray-5);
+}

@@ -1,0 +1,107 @@
+---
+interface Props {
+  idNum: string;
+  nom: string;
+  tag?: string;
+  bus?: string;
+}
+
+const { idNum, nom, tag = "COMPOSANT", bus } = Astro.props;
+---
+
+<section class="hw-module">
+  <header class="hw-header">
+    <div class="hw-id-group">
+      <span class="hw-index">{idNum}</span>
+      <h3 class="hw-title">{nom}</h3>
+    </div>
+    <div class="hw-tags">
+      {bus && <span class="hw-bus">{bus}</span>}
+      <span class="hw-tag">{tag}</span>
+    </div>
+  </header>
+  <div class="hw-content">
+    <slot />
+  </div>
+</section>
+
+<style>
+  .hw-module {
+    margin: 2.5rem 0;
+    background: var(--sl-color-gray-6);
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  }
+
+  .hw-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0.65rem 1rem;
+    background: var(--sl-color-gray-5);
+    border-bottom: 1px solid var(--sl-color-gray-4);
+  }
+
+  .hw-id-group {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+  }
+
+  .hw-index {
+    font-family: var(--sl-font-mono);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--sl-color-accent-high);
+    background: var(--sl-color-black);
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    border: 1px solid var(--sl-color-gray-4);
+  }
+
+  .hw-title {
+    margin: 0 !important;
+    font-size: 1.05rem !important;
+    font-weight: 600;
+    color: var(--sl-color-white);
+  }
+
+  .hw-tags {
+    display: flex;
+    gap: 0.4rem;
+  }
+
+  .hw-bus {
+    font-family: var(--sl-font-mono);
+    font-size: 0.7rem;
+    padding: 0.1rem 0.45rem;
+    border-radius: 4px;
+    background: rgba(59, 130, 246, 0.15);
+    color: #60a5fa;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+  }
+
+  .hw-tag {
+    font-family: var(--sl-font-mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    padding: 0.1rem 0.45rem;
+    border-radius: 4px;
+    background: var(--sl-color-gray-4);
+    color: var(--sl-color-gray-2);
+  }
+
+  .hw-content {
+    padding: 1.25rem;
+  }
+
+  .hw-content :global(img) {
+    border-radius: 6px;
+    border: 1px solid var(--sl-color-gray-5);
+    margin: 1rem 0;
+  }
+</style>
