@@ -1,0 +1,15 @@
+title = "Tuto : Convertir un disque MBR en GPT"
+slug = "tutorials/convert/convert"
+date = "2021-07-14"
+
+[author]
+pseudo = "l.heywang"
+name = "l.heywang"
+role = "Admin / Helper"
+avatar = "/avatars/jeff.png"
+
+# Données pour /home/bot
+[metadata]
+title_keyword = "Convertir"
+aux_keywords = ["disque", "conversion"]
+misc_keywords = ["MBR", "GPT", "partition", "ssd", "hdd"]

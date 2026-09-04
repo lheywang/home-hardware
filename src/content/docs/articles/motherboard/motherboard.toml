@@ -9,6 +9,7 @@ role = "Admin / Helper"
 avatar = "/avatars/jeff.png"
 
 # Données pour /home/bot
+[metadata]
 title_keyword = "Carte-Mère"
 aux_keywords = ["vrm", "pcie", "chipset"]
 misc_keywords = ["pcie", "mcu", "ethernet", "usb"]

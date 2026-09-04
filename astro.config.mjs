@@ -31,10 +31,14 @@ export default defineConfig({
 
 			sidebar: [
 				{
-					label: 'Guides',
+					label: 'Articles',
                     items: [{ autogenerate: { "directory": "articles" } }]
 					
 				},
+                {
+                    label: 'Tutos',
+                    items: [{ autogenerate: { "directory": "tutorials" } }]
+                }
 			],
 		}),
 	],

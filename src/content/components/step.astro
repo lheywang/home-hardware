@@ -1,0 +1,136 @@
+---
+interface Props {
+  step: number | string;
+  title: string;
+  open?: boolean;
+  tag?: string;
+}
+
+const { step, title, open = false, tag } = Astro.props;
+const formattedStep = typeof step === 'number' ? String(step).padStart(2, '0') : step;
+---
+
+<details class="step-module" open={open}>
+  <summary class="step-summary">
+    <div class="step-header-left">
+      <span class="step-badge">{formattedStep}</span>
+      <span class="step-title">{title}</span>
+    </div>
+    <div class="step-header-right">
+      {tag && <span class="step-tag">{tag}</span>}
+      <span class="step-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </span>
+    </div>
+  </summary>
+  <div class="step-content">
+    <slot />
+  </div>
+</details>
+
+<style>
+  .step-module {
+    margin: 1rem 0;
+    background: var(--sl-color-gray-6, #18191e);
+    border: 1px solid var(--sl-color-gray-5, #272935);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: border-color 0.2s ease;
+  }
+
+  .step-module[open] {
+    border-color: var(--sl-color-accent, #6366f1);
+  }
+
+  .step-summary {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.85rem 1.15rem;
+    cursor: pointer;
+    user-select: none;
+    background: var(--sl-color-gray-6, #18191e);
+    transition: background-color 0.15s ease;
+  }
+
+  .step-summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .step-summary:hover {
+    background: var(--sl-color-gray-5, #22242f);
+  }
+
+  .step-header-left {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+  }
+
+  .step-badge {
+    font-family: var(--sl-font-mono, ui-monospace, monospace);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--sl-color-accent-high, #a5b4fc);
+    background: var(--sl-color-black, #0f1015);
+    border: 1px solid var(--sl-color-gray-4, #393c4e);
+    border-radius: 4px;
+    padding: 0.2rem 0.45rem;
+    line-height: 1;
+  }
+
+  .step-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--sl-color-white, #f8fafc);
+  }
+
+  .step-header-right {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .step-tag {
+    font-family: var(--sl-font-mono, ui-monospace, monospace);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.15rem 0.45rem;
+    border-radius: 4px;
+    background: var(--sl-color-gray-5, #262938);
+    color: var(--sl-color-gray-2, #94a3b8);
+    border: 1px solid var(--sl-color-gray-4, #393c4e);
+  }
+
+  .step-icon {
+    display: flex;
+    align-items: center;
+    color: var(--sl-color-gray-3, #64748b);
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+
+  .step-module[open] .step-icon {
+    transform: rotate(180deg);
+    color: var(--sl-color-accent, #6366f1);
+  }
+
+  .step-content {
+    padding: 1.25rem;
+    border-top: 1px solid var(--sl-color-gray-5, #272935);
+    background: var(--sl-color-black, #0f1015);
+  }
+
+  /* Gestion fluide des blocs markdown à l'intérieur */
+  .step-content :global(p:first-child) {
+    margin-top: 0;
+  }
+
+  .step-content :global(p:last-child) {
+    margin-bottom: 0;
+  }
+</style>

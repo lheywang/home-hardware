@@ -1,0 +1,15 @@
+title = "Tuto : Formatter un disque"
+slug = "tutorials/format/format"
+date = "2021-01-24"
+
+[author]
+pseudo = "l.heywang"
+name = "l.heywang"
+role = "Admin / Helper"
+avatar = "/avatars/jeff.png"
+
+# Données pour /home/bot
+[metadata]
+title_keyword = "Format"
+aux_keywords = ["disque", "formattage"]
+misc_keywords = ["NTFS", "FAT32", "partition", "ssd", "hdd"]

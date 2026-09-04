@@ -1,0 +1,35 @@
+---
+title: "Tuto : Formatter un disque sur Windows"
+---
+
+import ArticleHeader from "../../../components/header.astro";
+import Step from "../../../components/step.astro";
+
+<ArticleHeader tomlPath="tutorials/Formatter/format.toml" />
+
+---
+
+Vous avez un disque dur / ssd branché mais invisible dans vos fichiers ? 
+Il faut initialiser le disque dur ou ssd 
+
+<Step step={1} title="Ouvrir le gestionnaire de disque" tag="Gestionnaire de disque" open>
+
+    - WINDOWS (la touche) + X
+    - gestionnaire de disque
+
+</Step>
+
+<Step step={2} title="Initialiser le disque" tag="Initialisation" open>
+
+    - Le disque(hdd ou ssd) apparait, mais avec une bande noire (non alloué)
+    - Créer un volume dessus (clic droit sur son espace, nouveau volume simple). Une page s'ouvre, on laisse tout les paramètre par default (on ne clique QUE sur suivant). Penser à changer le nom pour pouvoir en profiter, sinon il sera nommé "Nouveau volume simple".
+    - Après quelques secondes, le disque (hdd ou ssd) apparait avec une bande bleue.
+
+</Step>
+
+<Step step={3} title="Vérifier" tag="Vérifier" open>
+
+    - On peut retourner dans l'explorateur de fichiers (Windows + E)
+    - Le disque est visible !
+
+</Step>

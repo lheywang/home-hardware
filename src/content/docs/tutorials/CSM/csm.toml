@@ -1,0 +1,15 @@
+title = "Tuto : Activer le CSM"
+slug = "tutorials/format/format"
+date = "2021-01-24"
+
+[author]
+pseudo = "Xzeno"
+name = "Xzeno"
+role = "Helper"
+avatar = "/avatars/xzeno.png"
+
+# Données pour /home/bot
+[metadata]
+title_keyword = "CSM"
+aux_keywords = ["disque", "CSM", "boot"]
+misc_keywords = ["CSM", "partition", "ssd", "hdd"]

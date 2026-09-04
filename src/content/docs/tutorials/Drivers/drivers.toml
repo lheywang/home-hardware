@@ -1,0 +1,15 @@
+title = "Tuto : Installer ses drivers"
+slug = "tutorials/drivers/drivers"
+date = "2022-02-05"
+
+[author]
+pseudo = "l.heywang"
+name = "l.heywang"
+role = "Admin / Helper"
+avatar = "/avatars/jeff.png"
+
+# Données pour /home/bot
+[metadata]
+title_keyword = "Drivers"
+aux_keywords = ["Drivers", "Pilotes", "Periphériques"]
+misc_keywords = ["Graphique", "Crash", "Erreur"]

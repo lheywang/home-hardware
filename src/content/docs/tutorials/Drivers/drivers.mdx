@@ -1,0 +1,74 @@
+---
+title: "Tuto : Installer ses drivers"
+---
+
+import ArticleHeader from "../../../components/header.astro";
+import Step from "../../../components/step.astro";
+
+import { Tabs, TabItem } from "@astrojs/starlight/components";
+
+<ArticleHeader tomlPath="tutorials/Conversion-MBR-GPT/convert.toml" />
+
+---
+
+Pour convertir un disque MBR en GPT : 
+
+<Step step={1} title="Télécharger les drivers" tag="Download" open>
+
+    -Télécharger les drivers sur le sites constructeurs
+
+    <Tabs syncKey="brand">
+        <TabItem label="MSI">
+            [Link](hhttps://fr.msi.com/)
+        </TabItem>
+        <TabItem label="Asus">
+            [Link](https://rog.asus.com/fr/)
+        </TabItem>
+        <TabItem label="Gigabyte">
+            [Link](https://www.gigabyte.com/fr/)
+        </TabItem>
+        <TabItem label="Asrock">
+            [Link](ttps://www.asrock.com/)
+        </TabItem>
+    </Tabs>
+
+    Ou plus généralement, tu navigues sur le site constructeur (les outils comme toutlesdrivers.com sont assez médiocres), il faut aller dans l'onglet SUPPORT, et tu trouveras une partie DRIVERS / PILOTES. 
+    (parfois une recherche du modèle de la carte mère te renvoie plus vite au bon endroit)
+
+    Tu télécharges TOUS les drivers disponibles (environ une dizaine) pour ta version de windows. 
+
+</Step>
+
+<Step step={2} title="DiskPart" tag="DiskPart" open>
+
+    Ensuite, avec l'aide de l'image jointe à ce message : 
+    1. Tu obtiens donc une dizaine de dossier comme celui-là, avec un dossier dedans. 
+    2. Tu extrais le dossier, en le glissant par exemple sur ton bureau (représenté par la flèche).
+    3. Tu obtiens un dossier, décompressé. 
+    4. Il ne reste qu'a ouvrir ce dossier, et rechercher l'application dedans, cette dernier permettra l'installation des drivers. 
+    
+    :::note
+    PS : Il est possible de déplacer les drivers, en utilisant une clé USB. Il faut alors copier le dossier compressé, avant de poursuivre.
+    :::
+
+    Penses à redémarrer le pc pour terminer cette étape.
+
+</Step>
+
+<Step step={3} title="Drivers graphiques" tag="Graphiques" open>
+
+    Tu récupères le drivers sur leur site
+    - [Site Nvidia](https://www.nvidia.fr/Download/index.aspx?lang=fr)
+    - [Site AMD](https://www.amd.com/fr/support)
+
+    (le driver peut être assez gros, de l'ordre de 500Mo, c'est normal)
+
+    Il te suffira de cliquer sur le fichier télécharger afin de l'installer, de la même manière que pour les drivers précédents ! 
+
+    PS : Une extraction n'est pas forcément necessaire pour ce dernier, c'est à toi de voir si tu peux immediatement executer l'application ou pas.
+
+    Laisses toi guider par l'installateur, puis un dernier redemarrage sera effectué !
+
+</Step>
+
+Tes drivers sont installés !
