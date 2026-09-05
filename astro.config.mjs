@@ -38,6 +38,10 @@ export default defineConfig({
                 {
                     label: 'Tutos',
                     items: [{ autogenerate: { "directory": "tutorials" } }]
+                },
+                {
+                    label: 'Communauté',
+                    items: [{ autogenerate: { "directory": "commu" } }]
                 }
 			],
 		}),

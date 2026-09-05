@@ -1,0 +1,15 @@
+title = "Blog : Qu'est ce que c'est un OS ?"
+slug = "commu/Qu'est-ce-que-c'est-un-OS/os"
+date = "2024-08-11"
+
+[author]
+pseudo = "Maxime"
+name = "Maxime"
+role = "Membre"
+avatar = "/avatars/maxime.png"
+
+# Données pour /home/bot
+[metadata]
+title_keyword = "OS"
+aux_keywords = ["Blog", "OS", "Système", "License"]
+misc_keywords = ["Distribution", "Système"]

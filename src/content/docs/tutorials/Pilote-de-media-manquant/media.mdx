@@ -1,0 +1,69 @@
+---
+title: "Tuto : Pilote de média manquant pendant l'installation"
+---
+
+import ArticleHeader from "../../../components/header.astro";
+import Step from "../../../components/step.astro";
+
+<ArticleHeader tomlPath="tutorials/Partitions/partitions.toml" />
+
+---
+
+Salut, si vous avez un message d’erreur de pilote média au moment de choisir votre disque lors de 
+l’installation de Windows avec votre clé bootable pas de panique !
+
+## Sur un autre Ordinateur : 
+
+<Step step={1} title="Télécharger le driver" tag="Téléchargement" open>
+
+    Rendez-vous sur le site d’Intel et téléchargez le pilote 
+    [SetupRST.exe](https://www.intel.com/content/www/us/en/download/720755/intel-rapid-storage-technology-driver-installation-software-with-intel-optane-memory-11th-up-to-13th-gen-platforms.html)
+    
+    À la fin du téléchargement, ouvrez le gestionnaire des fichiers et vérifier que le pilote est bien présent dans votre section Téléchargement.
+
+</Step>
+
+<Step step={2} title="Ouvrir un terminal" tag="Terminal" open>
+
+    Maintenant qu’il est dans la section, ouvrez un CMD en administrateur, il faudra donc mettre le chemin d’accès jusqu’à Téléchargement.
+    (Pour le trouver, faites un clique droit sur le SetupRST.exe puis propriétés !)
+    Exemple : 
+
+    ```bash
+    cd C:\Users\Ordinateur\Downloads\ 
+    ```
+
+</Step>
+
+<Step step={3} title="Extraire le driver" tag="Terminal" open>
+
+    De retour à l’étape pour choisir son disque, cliquez sur Parcourir
+  
+    ```bash
+    SetupRST.exe -extractdrivers SetupRST_extracted
+    ```
+
+    Après avoir exécuté cette commande, vous allez avoir un nouveau dossier intitulé : 
+    SetupRST_extracted que vous pouvez désormais mettre sur votre clé bootable Windows.
+
+</Step>
+
+## Sur l'ordinateur cible : 
+
+<Step step={4} title="Installer le driver" tag="Install" open>
+
+       De retour à l’étape pour choisir son disque, cliquez sur Parcourir
+  
+    Vous allez avoir une page, il faudra suivre ce chemin :
+
+    ```
+    -> SetupRST_extracted
+        -> production
+            -> Windows …
+                -> 15063
+                    -> Drivers puis double clique sur VMD
+    ```
+
+    Une nouvelle fenêtre apparaîtra, avec Intel RST VMD … en bleu, il suffit de faire suivant puis votre disque apparaîtra dans la liste !!
+
+</Step>

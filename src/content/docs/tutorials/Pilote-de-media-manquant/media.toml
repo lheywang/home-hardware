@@ -1,0 +1,15 @@
+title = "Tuto : Pilote de média manquant"
+slug = "tutorials/Plote-de-media-manquant/media"
+date = "2024-01-01"
+
+[author]
+pseudo = "Xzeno"
+name = "Xzeno"
+role = "Helper"
+avatar = "/avatars/xzeno.png"
+
+# Données pour /home/bot
+[metadata]
+title_keyword = "Pilote"
+aux_keywords = ["Media", "Manquant", "Installation", "Windows"]
+misc_keywords = ["Driver", "Disque"]

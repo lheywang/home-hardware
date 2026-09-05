@@ -12,7 +12,7 @@ import Step from "../../../components/step.astro";
 Je fais ce message pour tout le monde, ce "soucis" est en effet récurrent.
 Et.. ce n'est pas un soucis en lui même, puisque tu as volontairement fais une partition pour windows (au passage, j'en profites pour dire que cette pratique est inutile et n'apporte QUE des soucis).
 
-<Step step={} title="Crée un autre disque" tag="Nouvelle partition" open>
+<Step step={1} title="Crée un autre disque" tag="Nouvelle partition" open>
 
     Crée un nouveau disque, D:\/ sur la place restante : 
     - Ouvrir le gestionnaire de disques : Nouveau volume simple (clic droit sur la partie noire de ton disque) et hop.
@@ -21,14 +21,14 @@ Et.. ce n'est pas un soucis en lui même, puisque tu as volontairement fais une 
 
 </Step>
 
-<Step step={} title="Agrandir" tag="Agrandir" open>
+<Step step={2} title="Agrandir" tag="Agrandir" open>
 
     Agrandir la partition : Pas nativement possible, certains outils le permettent (Aomei...). Dans ce cas là, tu récupères un disque C:/ complet.
     Peut causer des soucis etant donné la nature des outils utilisés.
 
 </Step>
 
-<Step step={} title="Formatter" tag="Formatter" open>
+<Step step={3} title="Formatter" tag="Formatter" open>
 
     Re-formater le pc completement, et reinstaller windows sur une seule et unique partition : Un peu plus de manips, mais de loin la solution la plus perenne : Aucuns outils ni bricolages , mais pertes de données totales.
 

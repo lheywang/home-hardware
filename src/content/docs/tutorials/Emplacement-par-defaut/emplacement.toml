@@ -1,0 +1,15 @@
+title = "Tuto : Configurer le disque par défaut"
+slug = "tutorials/Emplacement-par-defaut/emplacement"
+date = "2023-12-23"
+
+[author]
+pseudo = "Xzeno"
+name = "Xzeno"
+role = "Helper"
+avatar = "/avatars/xzeno.png"
+
+# Données pour /home/bot
+[metadata]
+title_keyword = "Emplacement"
+aux_keywords = ["Disque", "Telechargements", "Stockage"]
+misc_keywords = ["Contenu", "Partition"]
