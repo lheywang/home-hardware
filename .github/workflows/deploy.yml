@@ -29,7 +29,7 @@ jobs:
 
       - name: Generate articles.json from TOML
         run: |
-          pip install scikit-learn unidecode 
+          pip install -r requirements.txt
           python scripts/index.py
 
       - name: Set up Node.js
