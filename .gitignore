@@ -19,3 +19,9 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
+
+# Python files
+*.pyc
+
+# Artefacts
+*index.json
