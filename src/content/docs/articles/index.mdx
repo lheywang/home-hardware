@@ -1,0 +1,29 @@
+---
+title: Articles
+description: Des articles de vulgarisation sur des sujets poussés !
+template: doc
+hero:
+  title: "Home-Hardware : Articles"
+  tagline: Des articles longs sur des sujets complexes !
+  actions:
+    - text: Retour acceuil
+      link: /
+      icon: right-arrow
+      variant: primary
+    - text: Rejoindre le Discord
+      link: "https://discord.gg/R9HNVnBs6s"
+      icon: discord
+      variant: secondary
+---
+
+import { Card, CardGrid, LinkCard } from "@astrojs/starlight/components";
+
+## Accès direct
+
+<CardGrid>
+  <LinkCard
+    title="Comprendre une carte mère"
+    description="Comprendre les composants et fonctions !"
+    href="/articles/cartes-meres/motherboard"
+  />
+</CardGrid>

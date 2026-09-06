@@ -32,16 +32,30 @@ export default defineConfig({
 			sidebar: [
 				{
 					label: 'Articles',
-                    items: [{ autogenerate: { "directory": "articles" } }]
-					
+                    items: [
+                        { label: "Vue d'ensemble", link: '/articles' },
+                        { autogenerate: { "directory": "articles" } },]
 				},
                 {
                     label: 'Tutos',
-                    items: [{ autogenerate: { "directory": "tutorials" } }]
+                    items: [
+                        { label: "Vue d'ensemble", link: '/tutorials' },
+                        { autogenerate: { "directory": "tutorials" } }
+                    ]
+                },
+                {
+                    label: 'Tips',
+                    items: [
+                        { label: "Vue d'ensemble", link: '/tips' },
+                        { autogenerate: { "directory": "tips" } }
+                    ]
                 },
                 {
                     label: 'Communauté',
-                    items: [{ autogenerate: { "directory": "commu" } }]
+                    items: [
+                        { label: "Vue d'ensemble", link: '/commu' },
+                        { autogenerate: { "directory": "commu" } }
+                    ]
                 }
 			],
 		}),

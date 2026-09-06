@@ -1,39 +1,74 @@
 ---
-title: Bienvenue !
-description: Site support en lien avec le discord home-hardware !
-# template: splash # Remove or comment out this line to display the site sidebar on this page.
+title: Home Hardware — Documentation & Vulgarisation Matérielle
+description: Base de connaissances communautaire indépendante dédiée au matériel informatique, aux architectures PC, aux diagnostics et aux protocoles bas niveau.
+template: splash
 hero:
-  image:
-    file: ../../assets/logos/icon.png
+  title: "Home-Hardware : La documentation"
+  tagline: Guides d'achat basés sur des métriques réelles, analyses architecturales et procédures pas-à-pas pour diagnostiquer, configurer et dépanner votre matériel.
   actions:
-    - text: Articles
-      link: /articles/motherboard
+    - text: Explorer les guides
+      link: /articles
       icon: right-arrow
-    - text: Tutos
-      link: /tutorial/
-      icon: right-arrow
-      variant: minimal
+      variant: primary
+    - text: Rejoindre le Discord
+      link: "https://discord.gg/R9HNVnBs6s"
+      icon: discord
+      variant: secondary
 ---
 
-import { Card, CardGrid } from "@astrojs/starlight/components";
+import { Card, CardGrid, LinkCard } from "@astrojs/starlight/components";
 
-## Next steps
+## Sujets principaux
 
 <CardGrid stagger>
-  <Card title="Update content" icon="pencil">
-    Edit `src/content/docs/index.mdx` to see this page change.
+  <Card title="Base de connaissances" icon="open-book">
+    Des articles complets pour vulgariser des sujets en profondeur.
   </Card>
-  <Card title="Change page layout" icon="document">
-    Delete `template: splash` in `src/content/docs/index.mdx` to display a
-    sidebar on this page.
-  </Card>
-  <Card title="Add new content" icon="add-document">
-    Add Markdown or MDX files to `src/content/docs` to create new pages.
-  </Card>
-  <Card title="Configure your site" icon="setting">
-    Edit your `sidebar` and other config in `astro.config.mjs`.
-  </Card>
-  <Card title="Read the docs" icon="open-book">
-    Learn more in [the Starlight Docs](https://starlight.astro.build/).
+
+<Card title="Systèmes & Électronique PC" icon="laptop">
+  Explications de sujets connexes à l'informatique, allant de l'électronique à
+  l'informatique.
+</Card>
+
+<Card title="Tutoriels" icon="setting">
+  Des guides complets pour apprendre à réparer / entretenir son PC !
+</Card>
+
+  <Card title="Communauté" icon="open-book">
+    Des articles écrit par la communauté, pour la communauté. De quoi partager vos connaissances avec les autres !
   </Card>
 </CardGrid>
+
+---
+
+## Accès direct
+
+<CardGrid>
+  <LinkCard
+    title="Formater et partitionner un disque proprement"
+    description="Initialisation GPT, partitionnement NTFS/FAT32 et récupération d'espace disque non alloué sous Windows."
+    href="tutorials/formatter/format"
+  />
+  <LinkCard
+    title="Activer et comprendre le mode CSM"
+    description="Compatibilité Legacy vs UEFI, boot sur anciens supports et pièges d'amorçage."
+    href="tutorials/csm/csm"
+  />
+</CardGrid>
+
+---
+
+## Écosystème Discord & Recherche instantanée
+
+Une base de donnée des articles est disponible ici : `home-hardware.app/index.json`. Un [bot discord](https://github.com/lheywang/home-bot)
+l'indexe automatiquement et propose un menu de recherche, directement dans le logiciel !
+
+Utilisez :
+
+```text
+/search query: vrm carte mere <size: 5>
+```
+
+## Participer ?
+
+Certains des articles peuvent-être écrits par la communauté ! Passez discuter avec nous sur discord pour soumettre un article !
