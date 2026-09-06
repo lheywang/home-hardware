@@ -8,7 +8,7 @@
 # Configuration
 L1_MAX = 100000
 L1_MIN = 50000
-L1_STP = (L1_MAX - L1_MIN) // (1 - 1)
+L1_STP = (L1_MAX - L1_MIN) // (2 - 1)
 
 L2_MAX = 10000
 L2_MIN = 5000
