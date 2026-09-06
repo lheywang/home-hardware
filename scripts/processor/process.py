@@ -19,6 +19,8 @@ from .weights import _weight
 
 def _get_data(input: Path) -> tuple[str, list[str], datetime, str, str, str]:
 
+    print(f"Reading {str(input)} ...")
+
     out = hashlib.sha512()
     keywords = []
     date = None
@@ -35,12 +37,17 @@ def _get_data(input: Path) -> tuple[str, list[str], datetime, str, str, str]:
         out.update(data["author"]["pseudo"].encode())
 
         # Fetch the keywords for a future extraction
-        keywords.append([unidecode(data["metadata"]["title_keyword"]), unidecode(data["author"]["pseudo"])])
+        keywords.append(
+            [
+                unidecode(data["metadata"]["title_keyword"]),
+                unidecode(data["author"]["pseudo"]),
+            ]
+        )
         keywords.append([unidecode(x) for x in data["metadata"]["aux_keywords"]])
         keywords.append([unidecode(x) for x in data["metadata"]["misc_keywords"]])
 
         # Extract the date
-        date = datetime.strptime(data["date"], '%Y-%m-%d')
+        date = datetime.strptime(data["date"], "%Y-%m-%d")
 
         # Extract the slug
         slug = data["slug"]
@@ -48,7 +55,6 @@ def _get_data(input: Path) -> tuple[str, list[str], datetime, str, str, str]:
         # Extract the title and author
         title = unidecode(data["title"])
         author = unidecode(data["author"]["pseudo"])
-
 
     return out.hexdigest(), keywords, date, slug, title, author
 
@@ -84,12 +90,12 @@ def process(types: list[list[tuple[Path, Path]]]) -> list[dict]:
     # Extract the best keywords
     _extract(fileList, 30)
 
-    # Clean the keywords between all levels : 
+    # Clean the keywords between all levels :
     print("Cleaning keywords ...")
     for index, file in enumerate(fileList):
         fileList[index] = _keywords(file)
 
-    # Get the keywords and their weight metric : 
+    # Get the keywords and their weight metric :
     print("Computing the keywords weights ...")
     for index, file in enumerate(fileList):
         fileList[index] = _weight(file)

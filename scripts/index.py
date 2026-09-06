@@ -25,7 +25,7 @@ def fetch_ressources(folderName: str, basePath: Path) -> list[tuple[Path, Path]]
 
         toml_file = md_file.with_suffix(".toml")
         if toml_file.is_file():
-            output.append((toml_file, md_file))
+            output.append((md_file, toml_file))
 
     return output
 
