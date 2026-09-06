@@ -8,19 +8,19 @@
 # Configuration
 L1_MAX = 100000
 L1_MIN = 50000
-L1_STP = (L1_MAX - L1_MIN) // 3
+L1_STP = (L1_MAX - L1_MIN) // (1 - 1)
 
 L2_MAX = 10000
 L2_MIN = 5000
-L2_STP = (L2_MAX - L2_MIN) // 4
+L2_STP = (L2_MAX - L2_MIN) // (4 - 1)
 
 L3_MAX = 1000
 L3_MIN = 500
-L3_STP = (L3_MAX - L3_MIN) // 6
+L3_STP = (L3_MAX - L3_MIN) // (6 - 1)
 
 L4_MAX = 100
 L4_MIN = 1
-L4_STP = (L4_MAX - L4_MIN) // 30
+L4_STP = (L4_MAX - L4_MIN) // (30 - 1)
 
 def _get_value(idx: int, maxval: int, min: int, step: int) -> int:
     return round(max(maxval - (idx * step), min))
