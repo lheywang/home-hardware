@@ -17,12 +17,15 @@ def fetch_ressources(folderName: str, basePath: Path) -> list[tuple[Path, Path]]
     searchPath = (basePath / Path(folderName)).resolve()
 
     # Search for files
-    md = searchPath.rglob("*.mdx")
-    toml = searchPath.rglob("*.toml")
+    output: list[tuple[Path, Path]] = []
 
-    output = []
-    for mdfile, tomlfile in zip(toml, md):
-        output.append((Path(tomlfile), Path(mdfile)))
+    for md_file in searchPath.rglob("*.mdx"):
+        if md_file.name == "index.mdx":
+            continue
+
+        toml_file = md_file.with_suffix(".toml")
+        if toml_file.is_file():
+            output.append((toml_file, md_file))
 
     return output
 
@@ -43,4 +46,3 @@ if __name__ == "__main__":
     export(output, data)
 
     print("Done !")
-
