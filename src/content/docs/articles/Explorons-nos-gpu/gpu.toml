@@ -1,0 +1,14 @@
+title = "Explorons-nos-gpu"
+slug = "articles/Explorons-nos-gpu/gpu"
+date = "2024-04-02"
+
+[author]
+pseudo = "l.heywang"
+name = "l.heywang"
+role = "Admin / Helper"
+avatar = "/avatars/l.heywang.png"
+
+[metadata]
+title_keyword = "GPU"
+aux_keywords = ["Graphique", "Video", "VRAM"]
+misc_keywords = ["Nvidia", "AMD", "Radeon"]

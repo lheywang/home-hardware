@@ -1,0 +1,14 @@
+title = "Overcloking-et-au-delà"
+slug = "articles/Overcloking-et-au-delà/overclocking"
+date = "2024-01-25"
+
+[author]
+pseudo = "l.heywang"
+name = "l.heywang"
+role = "Admin / Helper"
+avatar = "/avatars/l.heywang.png"
+
+[metadata]
+title_keyword = "Overclocking"
+aux_keywords = ["OC", "Undervolt", "CPU", "GPU"]
+misc_keywords = ["XMP", "kHz", "MHz", "GHz"]

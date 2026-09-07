@@ -1,0 +1,139 @@
+---
+title: "Technique : Normes-et-magouilles"
+---
+
+import ArticleHeader from "../../../components/header.astro";
+import HardwareModule from "../../../components/module.astro";
+import Step from "../../../components/step.astro";
+import { Tabs, TabItem } from "@astrojs/starlight/components";
+import { Card, CardGrid } from "@astrojs/starlight/components";
+
+<ArticleHeader tomlPath="articles/Normes-et-magouilles/normes.toml" />
+
+<p class="article-lead">
+  **Pourquoi et comment on standardise quelque chose ?**
+</p>
+
+Hello, ça fait longtemps non ?
+
+Aujourd’hui, sujet assez important, et … inconnus de tous ! On va parler des normes.
+
+## C’est quoi ? Qui ? Pourquoi ?
+
+Pour ceux qui ont déjà regardé les détails de la tech, vous êtes déjà tombés sur casses têtes de
+compatibilités : Est-ce que mon téléphone va pouvoir capter le signal Wi-Fi de mon dernier routeur
+Wi-Fi ? Est-ce que mon nouveau composant va être compatible avec ceux déjà en ma possession ?
+
+Pour cela, vous avez probablement cherché des noms presque courants : USB, HDMI, Wi-Fi… Et, parfois
+vous êtes tombés sur des noms plus bizarres, par exemple 802.11ax. C’est quoi tout ça ?
+
+Tous ces noms sont en fait, des normes ! Ce sont des (longs) documents qui montrent tout les aspects
+techniques et théoriques ! Et ce sont eux, qui en fixant les règles du jeu pour un concept donné vont
+assurer que oui, les éléments seront inter-compatibles ! Et même encore mieux, qu’il n’y aura pas de
+dégâts en raison d’un mauvais branchement !
+
+Et ces normes, elles viennent d’où ? Généralement ce sont des entités, de grande envergure qui fixent
+ça. L’un des plus grands, l’IEEE. Vous ne connaissez pas, et pourtant, rien que pour lire cette page
+vous en utilisez de leurs normes !
+
+- **IEEE 802.11xx** à Wi-Fi
+- **IEEE 802.3** à Nos bon vieux câbles Ethernet
+- **IEEE 1905** à Nos boîtiers CPL
+
+Et c’est déjà gagné pour moi là , vous avez FORCEMENT utilisé un de ces éléments pour charger cette page !
+
+- **IEEE 754** à La façon dont votre processeur défini des nombres à virgule (12.1, 17.3…)
+- **IEEE 1667** à La façon dont votre PC parle à un support de stockage USB
+
+Bref, je pourrais continuer un sacré moment à ce rythme-là, vous avez compris. Quasiment l'entièreté de
+vos composants répondent à des normes.
+
+## Mais en fait, c’est qui l’IEEE ?
+
+C’est un regroupement de chercheurs et ingénieurs, et dans certains cas des entreprises pour différents
+sujets précis. Bref, un joli micmac.
+
+Mais parfois, ce ne sont pas des ingénieurs qui se regroupent, mais des entreprises. Dans ce cas-là, on
+parle plutôt de consortiums, un groupe dédié à la résolution d’un problème.
+
+Par exemple, on y trouve 4 consortiums célèbres :
+
+- **L’USB-IF** : Ont développé le bus… USB !
+- **PCI-SIG** : Ont développé le bus… PCI, et plus tard PCIe.
+- **HDMI** : Le câble du même nom !
+- **VESA** : Eux, il s’agit du câble… DisplayPort (et des formats de fixations éponymes).
+- **JEDEC** : La DDRx, GDDRx
+
+Bien évidemment, y’en a quelques dizaines d’autres, moins connus, mais pas forcément moins influents.
+Ceux cités sont les protocoles les plus utilisés, et connus de « tous ». Mais si l’on creuse, on en trouve
+des dizaines de normes plus « secondaires », et sans lesquelles votre PC ne marcherait simplement pas. Par
+exemple, l’I2C, à priori un petit bus lent, connus de ceux qui aiment bricoler avec des Arduino, mais il est
+utilisé pour … charger vos paramètres XMP au démarrage, ou bien détecter la résolution de vos écrans ! Bref,
+sans lui, ça ne marcherait pas.
+
+Et pour finir sur les différents acteurs, il y a aussi des normes « ouvertes », à l’origine développées par
+une marque en interne, puis ouverte aux autres. L’I2C, précédemment cité en est un bon exemple, puisque
+développé par NXP / Phillips.
+
+## Bon, jusque-là, on est dans le monde des Bisounours.
+
+Des gens vont écrire des gros documents pour que nous, consommateurs ont puisse être sûr de la compatibilité.
+Sauf, que, qui est membre de ces consortiums ? Et bah, les grandes marques : Intel, AMD, Nvidia, Samsung,
+ST Microélectronique…
+
+Et, ces marques-là ont un intérêt financier à ce qu’on utilise, et c’est globalement là que ça se gâte. Impossible
+de rentrer dans les détails, tellement ce domaine est obscur, mais ils sont doués pour faire payer !
+
+Petit exemple, les câbles HDMI. Vous vous demandiez pourquoi vous en avez en général un seul sur vos cartes
+graphiques, et 3 ports DisplayPort ? En bien, parce que CHAQUE port HDMI représente un coût de licences. Et le
+logo sur le produit ? Idem. Et le logo sur la boite ? Idem.
+
+Bref, les chiffres montent vite. Très vite. Selon certaines sources, le total n’avoisinerait pas moins de 5% du
+prix du matos ! Sur un PC à 1000€, vous avez donné 50€ aux entreprises pour juste, des normes.
+
+Et jusque-là, on supposait des consortiums qui font gaffe à ce que tout soit bien certifié. Malheureusement, ce
+n’est pas toujours le cas : Prenons exemple de l’USBC, top sur le papier, mais en raison de la trop grande diversité
+de protocole, on en revient à l’origine : Une jungle de câbles et protocoles, mais en pire : Ils sont tous avec
+la même prise !
+
+Prenez les normes USB (2.0, 3.0, 3.1, 3.2, 3.2x2, 4.0…), ajoutez-y les données très haut débit (DisplayPort Alt-Mode,
+Thunderbolt), la charge rapide (Quick Charge, Power Delivery, PPS…). N’imposez rien, et vous êtes sûrs de vous
+retrouver avec un combo unique d’options. Bref, le bazar. Et pour tout ceux qui ont déjà cherchés à brancher un
+périphérique sur votre PC portable, vous connaissez cette douleur. Et là, on a pas encore inclus les protocoles
+moins connus du port USBC !
+
+## Mais, on n’a toujours pas parlé de ce que défini une norme non ?
+
+Eh bien, je me suis amusé à lire une norme pour vous (du moins, pas en entier (en vrai, que les 3 premières pages)).
+Je ne vais pas poster le document ici, étant privé (obtenu via des accès universitaires). Pour prendre l’exemple du
+Wi-Fi, l’ensemble des parties sont chacune documentées : Quelles ondes radios, Comment. Mais aussi, comment on détecte
+le réseau, comment on s’y connecte… Et pour finir, quel format à la donnée que l’on transmet, dans quel ordre, sous
+quel format, à quelle vitesse...
+
+Forcément, ce document est très, très complexe, et complet. Mais c’est la base sur laquelle repose un fonctionnement
+presque sans prises de tête !
+
+## Et, quand une norme n’existe pas, il se passe quoi ?
+
+Et ça, je suis certain que vous l’avez, pour la majorité déjà expérimenté : C’est nommé le aRGB, et point bonus quand
+vous mixez les marques.
+
+Un principe standard, maîtrisé, mais en raison de l’absence de norme fixe, chaque constructeur fait sa petite cuisine
+maison.
+
+Et c’est ainsi que vous finissez avec du matériel pas assez compatible entre les marques pour assurer un usage unifié,
+mais trop compatible pour qu’ils soient isolés, et donc, des galères logicielles sans nom (beh oui, ils se marchent
+tous les uns sur les autres, puisqu'ils font à peu près la même chose !).
+
+Bref, jusqu’à maintenant, il est fort probable que vous trouviez les normes un truc absolument génial, et qu’il en
+faudrait pour absolument tout ? Alors, oui, mais non. En réalité, plusieurs normes sont utilisées justement pour bloquer
+les utilisateurs dans un monde commercial : Prenez par exemple, le HDMI HDCP, qui empêche de record votre écran dès qu’un
+contenu est protégé. C’est ici essentiellement un montage commercial, sous couverts de droits d’auteurs pour vous faire
+payer une sécurité !
+
+## Conclusion
+
+Et voilà, ce petit tour (rapide) de ce complexe monde des normes s’achève ! On pourrait y rester des heures, c’est même
+un métier !
+
+Tchuss, et à la prochaine !

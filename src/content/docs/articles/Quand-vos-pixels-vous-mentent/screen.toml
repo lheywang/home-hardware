@@ -1,0 +1,14 @@
+title = "Quand-vos-pixels-vous-mentent"
+slug = "articles/Quand-vos-pixels-vous-mentent/screen"
+date = "2025-05-05"
+
+[author]
+pseudo = "l.heywang"
+name = "l.heywang"
+role = "Admin / Helper"
+avatar = "/avatars/l.heywang.png"
+
+[metadata]
+title_keyword = "Ecran"
+aux_keywords = ["Pixel", "Overshoot", "Couleurs"]
+misc_keywords = ["FPS", "Gamut", "RGB"]

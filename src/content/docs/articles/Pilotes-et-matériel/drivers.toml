@@ -1,0 +1,14 @@
+title = "Pilotes-et-matériel"
+slug = "articles/Pilotes-et-matériel/drivers"
+date = "2023-11-22"
+
+[author]
+pseudo = "l.heywang"
+name = "l.heywang"
+role = "Admin / Helper"
+avatar = "/avatars/l.heywang.png"
+
+[metadata]
+title_keyword = "Drivers"
+aux_keywords = ["Pilotes", "Materiel", "Logiciel"]
+misc_keywords = ["Graphique", "Bugs"]

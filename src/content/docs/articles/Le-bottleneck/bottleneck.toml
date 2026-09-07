@@ -1,0 +1,14 @@
+title = "Le-bottleneck"
+slug = "articles/Le-bottleneck/bottleneck"
+date = "2026-09-07"
+
+[author]
+pseudo = "l.heywang"
+name = "l.heywang"
+role = "Admin / Helper"
+avatar = "/avatars/l.heywang.png"
+
+[metadata]
+title_keyword = "bottleneck"
+aux_keywords = ["Composants", "Limitations", "GPU"]
+misc_keywords = ["FPS", "brider"]

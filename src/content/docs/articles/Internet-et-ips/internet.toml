@@ -1,0 +1,14 @@
+title = "Internet-et-ips"
+slug = "articles/Internet-et-ips/internet"
+date = "2024-11-07"
+
+[author]
+pseudo = "l.heywang"
+name = "l.heywang"
+role = "Admin / Helper"
+avatar = "/avatars/l.heywang.png"
+
+[metadata]
+title_keyword = "Internet"
+aux_keywords = ["IP", "Adresse"]
+misc_keywords = ["Reseau", "Box", "Routeur"]

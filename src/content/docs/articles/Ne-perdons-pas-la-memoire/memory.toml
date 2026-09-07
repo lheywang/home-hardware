@@ -1,0 +1,14 @@
+title = "Ne-perdons-pas-la-memoire"
+slug = "articles/Ne-perdons-pas-la-memoire/memory"
+date = "2024-08-18"
+
+[author]
+pseudo = "l.heywang"
+name = "l.heywang"
+role = "Admin / Helper"
+avatar = "/avatars/l.heywang.png"
+
+[metadata]
+title_keyword = "RAM"
+aux_keywords = ["Memoire", "CAS", "XMP"]
+misc_keywords = ["Go", "MHz"]

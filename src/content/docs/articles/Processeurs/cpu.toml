@@ -1,0 +1,14 @@
+title = "Processeurs"
+slug = "articles/Processeurs/cpu"
+date = "2024-02-19"
+
+[author]
+pseudo = "l.heywang"
+name = "l.heywang"
+role = "Admin / Helper"
+avatar = "/avatars/l.heywang.png"
+
+[metadata]
+title_keyword = "CPU"
+aux_keywords = ["ALU", "Core", "Architecture"]
+misc_keywords = ["Fonctionnement", "ALU", "Fetch", "Decode", "Execute", "Store"]

@@ -1,0 +1,14 @@
+title = "Normes-et-magouilles"
+slug = "articles/Normes-et-magouilles/normes"
+date = "2026-01-29"
+
+[author]
+pseudo = "l.heywang"
+name = "l.heywang"
+role = "Admin / Helper"
+avatar = "/avatars/l.heywang.png"
+
+[metadata]
+title_keyword = "Normes"
+aux_keywords = ["Specification", "Standard", "IEEE"]
+misc_keywords = ["USB", "Ethernet", "Magouilles"]

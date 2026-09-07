@@ -1,0 +1,14 @@
+title = "Alimentations-et-vrm"
+slug = "articles/Alimentations-et-vrm/alims"
+date = "2024-10-03"
+
+[author]
+pseudo = "l.heywang"
+name = "l.heywang"
+role = "Admin / Helper"
+avatar = "/avatars/l.heywang.png"
+
+[metadata]
+title_keyword = "Alim"
+aux_keywords = ["Power", "VRM", "Alimentation"]
+misc_keywords = ["Mosfets", "Carte-mère", "CPU"]

@@ -1,0 +1,14 @@
+title = "Les-os"
+slug = "articles/Les-os/os"
+date = "2024-05-09"
+
+[author]
+pseudo = "l.heywang"
+name = "l.heywang"
+role = "Admin / Helper"
+avatar = "/avatars/l.heywang.png"
+
+[metadata]
+title_keyword = "OS"
+aux_keywords = ["Windows", "Linux", "kernel"]
+misc_keywords = ["Exploitation", "driver", "systeme"]
