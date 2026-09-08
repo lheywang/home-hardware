@@ -22,8 +22,10 @@ L4_MAX = 100
 L4_MIN = 1
 L4_STP = (L4_MAX - L4_MIN) // (30 - 1)
 
+
 def _get_value(idx: int, maxval: int, min: int, step: int) -> int:
     return round(max(maxval - (idx * step), min))
+
 
 def _get_weight(inp: list[str], max: int, min: int, step: int) -> list[tuple[str, int]]:
 
@@ -32,6 +34,7 @@ def _get_weight(inp: list[str], max: int, min: int, step: int) -> list[tuple[str
         output.append((word, _get_value(index, max, min, step)))
 
     return output
+
 
 def _weight(inp: dict):
 

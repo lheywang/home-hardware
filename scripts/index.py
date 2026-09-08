@@ -9,6 +9,7 @@
 from pathlib import Path
 from processor import process
 from exporter import export
+from resources import list_resources
 
 
 def fetch_ressources(folderName: str, basePath: Path) -> list[tuple[Path, Path]]:
@@ -44,5 +45,11 @@ if __name__ == "__main__":
     # We can export it
     output = (Path(__file__) / Path("../../public")).resolve() / Path("index.json")
     export(output, data)
+
+    # Finally, build the ressources.json file to be fetched by the secondary command :
+    output = (Path(__file__) / Path("../../public")).resolve() / Path(
+        "resources/resources.json"
+    )
+    list_resources((Path(__file__) / Path("../../public/resources")).resolve(), output)
 
     print("Done !")

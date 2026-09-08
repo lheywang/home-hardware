@@ -11,6 +11,7 @@ from pathlib import Path
 from dataclasses import asdict, dataclass
 import time
 
+
 def export(target: Path, data: list[dict]) -> None:
 
     # Clean up the elements
@@ -31,13 +32,6 @@ def export(target: Path, data: list[dict]) -> None:
     # Encode the buffer into JSON
     print("Writting file ...")
     with open(target, "w+") as f:
-        json.dump(
-            payload, 
-            f, 
-            ensure_ascii=True, 
-            indent=2
-        )
+        json.dump(payload, f, ensure_ascii=True, indent=2)
 
     return
-
-

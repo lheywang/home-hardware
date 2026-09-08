@@ -8,6 +8,7 @@
 # Imports
 from unidecode import unidecode
 
+
 def _remove(inp: list[str], stop: list[str]) -> tuple[list[str], list[str]]:
 
     localStop = stop
@@ -17,12 +18,12 @@ def _remove(inp: list[str], stop: list[str]) -> tuple[list[str], list[str]]:
 
         temp = unidecode(word).lower()
 
-        # Is the word already seen ? 
+        # Is the word already seen ?
         if temp in localStop:
             continue
         else:
 
-            # Does the word match a pattern we already seen ? 
+            # Does the word match a pattern we already seen ?
             if temp.endswith("s") or temp.endswith("x"):
                 if temp[:-1] in localStop:
                     continue
@@ -31,6 +32,7 @@ def _remove(inp: list[str], stop: list[str]) -> tuple[list[str], list[str]]:
             localStop.append(temp)
 
     return localStop, output
+
 
 def _keywords(inp: dict):
 
@@ -41,7 +43,7 @@ def _keywords(inp: dict):
     L4 = inp["extracted"]
 
     # Ensure we won't pass a reference and modify L1...
-    stopList = [] 
+    stopList = []
     stopList.extend([Lx.lower() for Lx in L1])
 
     # Clean the keywords
@@ -60,7 +62,3 @@ def _keywords(inp: dict):
     del inp["keywords"]
 
     return inp
-
-
-
-    
