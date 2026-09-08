@@ -1,0 +1,35 @@
+---
+title: Le-minage-est-il-mauvais
+---
+
+import ArticleHeader from "../../../components/header.astro";
+import HardwareModule from "../../../components/module.astro";
+import Step from "../../../components/step.astro";
+import { Tabs, TabItem } from "@astrojs/starlight/components";
+import { Card, CardGrid } from "@astrojs/starlight/components";
+
+<ArticleHeader tomlPath="commu/Le-minage-est-il-mauvais/minage.toml" />
+
+<p class="article-lead">
+	**Le minage détruit-il autant que l'ont le pense ?**
+</p>
+
+Petit récap concernant les cartes graphiques qui ont miné :
+- Un **GPU ayant miné ne s’abime pas**, que ce soit la puce GPU ou les puces de VRAM ça ne les dégrade pas. 
+Une carte peut miner 6 mois, 2 ans ou 5 ans, **ses perf seront les mêmes**. Un GPU n’est pas increvable bien 
+sûr, les étages d’alimentations par exemple peuvent s’user mais pas a une échelle aussi petite.
+
+- Cependant, la partie refroidissement n’est pas infaillible. **La pate thermique** et les **pads thermique**
+entre la carte et le rad vont sécher progressivement mais c’est **facilement remplaçable** si vous vous 
+sentez de démonter la carte. D’autres parties peuvent s’user, surtout celles en mouvement comme les 
+roulement des ventilateurs, c’est difficilement réparable mais c’est une conséquence rare et qui se 
+produit au bout de pas mal d’années (si elle se produit). Sans oublier **la poussière** qui peut faire 
+augmenter les températures mais c’est très vite enlevé.
+
+- Coté software aussi il faut faire attention, certains mineurs modifient le bios de leur carte graphique 
+pour avoir des fréquences et consommations plus rentables mais pour une utilisation classique ça peut créer 
+pas mal de bug d’affichages, de freeze ou de pertes de perf. Si c’est votre cas, vous pouvez **remettre le 
+bios de base** en suivant ce [tuto](https://generationcloud.fr/post/comment-mettre-a-jour-bios-carte-graphique-nvidia-amd#3_Flasher_le_nouveau_BIOS) 
+c’est une manip simple et assez rapide si c’est fait proprement mais ATTENTION, si vous vous ratez, 
+le carte peut finir HS donc faites le si vous êtes sur de ce que vous faite et que vous avez bien 
+compris la manip (certaines cartes peuvent avoir un double bios, ça peut vous sauver une fois, UNE SEULE)

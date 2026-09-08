@@ -1,0 +1,14 @@
+title = "Controler-ses-ventilateurs"
+slug = "commu/Controler-ses-ventilateurs/fans"
+date = "2020-03-04"
+
+[author]
+pseudo = "Wolfie"
+name = "Wolfie"
+role = "Membre"
+avatar = "/avatars/wolfie.png"
+
+[metadata]
+title_keyword = "Ventilos"
+aux_keywords = ["fans", "RGB", "aRGB"]
+misc_keywords = ["Hub", "Splitter", "Controller"]

@@ -1,0 +1,43 @@
+---
+title: Controler-ses-ventilateurs
+---
+
+import ArticleHeader from "../../../components/header.astro";
+import HardwareModule from "../../../components/module.astro";
+import Step from "../../../components/step.astro";
+import { Tabs, TabItem } from "@astrojs/starlight/components";
+import { Card, CardGrid } from "@astrojs/starlight/components";
+
+<ArticleHeader tomlPath="commu/Controler-ses-ventilateurs/fans.toml" />
+
+<p class="article-lead">
+	**Toujours une galère de contrôler mes 18 ventilos...**
+</p>
+
+Afin de contrôler des RPM ou RGB/aRGB des ventilateurs il y a plusieurs options, splitter, 
+hub ou controller
+
+Splitter c’est pour diviser un câble en plusieurs ports, c’est dans le nom, splitter = 
+séparateur en français. 
+Problème : rarement esthétique niveau câble management, et peut demander trop d’effort 
+à un seul port carte mère (et endommager le port par conséquent).
+-> méthode la moins coûteuse \<10 euros.
+
+Ensuite les Hubs, en général alimenté en SATA (sur PSU) + un câble qui va à la carte 
+mère pour contrôler le hub 
+Problème : un hub ne permet pas de contrôler individuellement les ports, tous les ports 
+agiront comme un seul ventilo).
+-> entre les deux niveau tarif ≈ 10/15 euros.
+
+En dernier les Controllers, ils permettent de faire exactement ce qu’un hub fait, mais 
+peut contrôler individuellement chaque port (si connection USB, il en existe sans où le 
+contrôle se fera en dehors d’un software, exemple télécommande ou bouton physique). 
+Exemple port 1 : 500 RPM couleur bleu, port 2 : 600 RPM couleur rouge etc.. (branché en 
+SATA ou Molex + câble USB sur carte mère).
+Problème : en général peu de ports (≈6), et parfois ne gère qu’un aspect, soit aRGB, 
+soit RPM -> méthode la plus coûteuse ≈ 30 euros ou plus.
+
+Souvent les ventilos avec un beau tarif proposent directement (inclu dans la boîte, en 
+général pack de 3 ou plus) un controller qui permet de gérer aRGB/RPM sur une seule 
+application. Je pense notamment aux UniFans de Lian Li entre autre, le pack de 3 offre 
+un controller qui permet de gérer a lui seul jusqu’à 16 ventilos, RPM + aRGB. 

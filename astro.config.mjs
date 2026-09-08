@@ -42,28 +42,53 @@ export default defineConfig({
 				{
 					label: 'Articles',
                     items: [
-                        { label: "Vue d'ensemble", link: '/articles' },
-                        { autogenerate: { "directory": "articles" } },]
-				},
+                        "articles/alimentations-et-vrm/alims",
+                        "articles/refroidissement-airflow-et-tdp/airflow",
+                        "articles/le-gros-son-de-nos-pc/audio",
+                        "articles/cartes-meres/motherboard",
+                        "articles/processeurs/cpu",
+                        "articles/de-texte-a-processeur/rtl",
+                        "articles/un-i5-est-un-i9-rate/binning",
+                        "articles/overclocking-et-au-dela/overclocking",
+                        "articles/stockage-et-bits/stockage",
+                        "articles/ne-perdons-pas-la-memoire/memory",
+                        "articles/entre-vitesse-et-stabilite/xmp",
+                        "articles/explorons-nos-gpu/gpu",
+                        "articles/les-os/os",
+                        "articles/pilotes-et-materiel/drivers",
+                        "articles/internet-et-ips/internet",
+                        "articles/le-bottleneck/bottleneck",
+                        "articles/quand-vos-pixels-vous-mentent/screen",
+                        "articles/normes-et-magouilles/normes",  
+                    ]
+                },
                 {
                     label: 'Tutos',
                     items: [
-                        { label: "Vue d'ensemble", link: '/tutorials' },
-                        { autogenerate: { "directory": "tutorials" } }
+                        "tutorials/attention-a-la-douane/douanes",
+                        "tutorials/conversion-mbr-gpt/convert",
+                        "tutorials/csm/csm",
+                        "tutorials/drivers/drivers",
+                        "tutorials/emplacement-par-defaut/emplacement",
+                        "tutorials/enceintes-qui-buzz/buzz",
+                        "tutorials/formatter/format",
+                        "tutorials/partitions/partitions",
+                        "tutorials/pas-de-connexion-internet-pendant-l-installation/connexion",
+                        "tutorials/pilote-de-media-manquant/media"
                     ]
                 },
                 {
                     label: 'Tips',
-                    items: [
-                        { label: "Vue d'ensemble", link: '/tips' },
-                        { autogenerate: { "directory": "tips" } }
-                    ]
+                    items: []
                 },
                 {
                     label: 'Communauté',
                     items: [
-                        { label: "Vue d'ensemble", link: '/commu' },
-                        { autogenerate: { "directory": "commu" } }
+                        "commu/controler-ses-ventilateurs/fans",
+                        "commu/fe-ou-custom/gpu",
+                        "commu/garanties-menteuses/garantie",
+                        "commu/le-minage-est-il-mauvais/minage",
+                        "commu/qu-est-ce-que-c-est-un-os/os",
                     ]
                 }
 			],

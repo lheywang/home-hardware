@@ -1,0 +1,102 @@
+---
+title: "Technique : L'XMP, entre-vitesse-et-stabilité"
+---
+
+import ArticleHeader from "../../../components/header.astro";
+import HardwareModule from "../../../components/module.astro";
+import Step from "../../../components/step.astro";
+import { Tabs, TabItem } from "@astrojs/starlight/components";
+import { Card, CardGrid } from "@astrojs/starlight/components";
+
+<ArticleHeader tomlPath="articles/Entre-vitesse-et-stabilité/xmp.toml" />
+
+<p class="article-lead">
+	**L'XMP, le grand magicien de la RAM mais aussi une source de problèmes.**
+</p>
+
+Hello ! 
+
+Pourquoi l'XMP est le sujet épineux de la communauté ? Pourquoi chez certains, ça marchera très bien et d'autres pas ? 
+
+:::note
+Cet article est issus de plusieurs messages discords, et combinés. Certaines phrases peuvent donc paraîtres peu naturelles.
+:::
+
+## La RAM : 
+
+La RAM est une périphérique différent des autres. Etant élément **ESSENTIEL** d'un PC (puisque nécessaire au démarrage !), il n'est 
+pas possible de le configurer à la volée (à l'opposé d'un GPU, ou même SSD, pas nécessaires pour les premières étapes du boot), il 
+n'y a pas de mise en commun possible comme avec du PCIe par exemple (ou les périphériques discutent sur la vitesse max possible 
+avant de s'y régler).
+
+La ram, c'est des signaux électriques bruts, sans protocol spécifique par dessus?
+
+Et la RAM, c'est rapide. Genre, très très rapide (6000 MHz = 6 GHz !!!). Pour donner un ordre de grandeur, c'est plus rapide que les 
+ondes que votre WiFi utilise.
+
+Or, à ces vitesses là, l'électricité dans les fils ne se comporte plus du tout comme on pourrait l'assimiler à basse fréquence, elle 
+a un comportement d'onde. Typiquement, les courts-circuits et circuits ouverts n'existent plus (elle rebondit avec un facteur 
+2 ou 0) (on doit alors user de techniques électroniques avancées pour y remédier ([Cf Impedance matching](https://fr.wikipedia.org/wiki/Adaptation_d%27imp%C3%A9dances))). 
+(C'est d'ailleurs pour cette  raison, et unique raison que l'on met les RAM dans les slots A2 et B2, et non A1 et B1 (Pour assurer 
+une liaison electrique neutre). Il n'y a AUCUNE contre indication du contrôleur mémoire).
+
+De ce fait, le milieu de propagation de l'onde joue un rôle TRES important ([Cf milieux dispersifs](https://fr.wikipedia.org/wiki/Dispersion_(m%C3%A9canique_ondulatoire))).
+
+Et là ou ça pose soucis, c'est que la RAM repose sur une configuration qui est chargée par le CPU, au boot sans concertation des différents 
+éléments. (A contrario de l'USB, SATA, PCIe... qui se mettent d'accord sur la vitesse max (ou même en live si trop d'erreurs venait à 
+être commises à la suite (= on ralenti le bus)). Et comme (Cf paragraphe 2), on ne sait plus distinguer une court-circuit / circuit 
+ouvert, bah il est IMPOSSIBLE de détecter une erreur mémoire / ou pas ! 
+
+**Le bon fonctionnement de la RAM repose sur une config, beaucoup de physique !**
+
+Or, la partie beaucoup de physique est influencée par beaucoup de paramètres : Longueur du bus, mais aussi nombre de récepteurs présents 
+(qui vont charger le bus !*).
+Plus tu en mets, moins tu peux aller vite (petite analogie avec de l'eau, si tu dois rempli un seau d'eau ou un m3, ça ira pas aussi vite !)
+
+## Une barette
+
+Maintenant, petite étude rapide d'une barrette de RAM : Il y a plusieurs puces (8), généralement en une simple banque (= un seul coté du 
+PCB, donc en gros, un récepteur par fil par barrette). Pour des capacités plus importantes, tu passes sur des barrettes doubles banques 
+(donc 2 récepteurs par fil par barrette).
+
+Et là, je penses que tu vois le truc venir : Plus tu vas charger ton bus (= plus tu vas mettre de barrettes), bah moins tu pourra aller 
+vite ([Cf circuits RC](https://fr.wikipedia.org/wiki/Circuit_RC))
+
+D'où le 7600 MHZ, qui correspond en réalité à une barrette simple banque, dès que tu en mets deux, tu seras plus emmerdé et plus lent 
+(~6400 Mhz). Pour 4, tu ne dépasseras plus vraiment les specs officielles (4800 - 5200 MHz).
+Et si en plus tu mets des grosses barrettes (+64 Go / barrette), tu passes en DDR5 3600 parce que c'est trop sinon ).
+
+Cf : Ici, je ne parles pas du dual channel, sinon tu fais un x2 sur le paragraphe.
+
+## En cas d'instabilités
+
+Et pour finir : Comme tu ne sais pas quand la RAM ne marches pas. Et qu'est ce qu'il se passe alors ? 
+Bah, la donnée est corrompue, et ... bah blue screen !
+Donc PC fonctionnel à moitié, voire pas du tout selon le niveau d'erreurs.
+
+:::note
+C'est d'ailleurs ça aussi le soucis chez Corsair en DDR4, leur réglages ne sont pas optimaux pour tout les processeurs.
+:::
+
+Mais, ça reste plus vendeur de vendre de la 7600 que de la 6000 non ? Voilà pourquoi !
+
+## Et mon processeur dans tout ça ? 
+
+Un CPU, ça une fréquence mémoire de base (5600Mhz) (au passage, c'est pas 5600Mhz, mais 5600MT/s).
+
+Mais, si tu l'OC (facile chez intel, un peu plus chiant chez AMD), bah tu as de meilleur débits, donc plus de 
+données qui arrivent et sortent du cpu, donc meilleures perfs.
+
+:::note
+Chez AMD, la fréquence du bus mémoire contrôle aussi d'autres éléments dans le système, et ce sont eux qui poseront soucis
+avant vos barettes !
+:::
+
+Quand configuré à leur frequence affichée correspond à celle dont ils garantissent le fonctionnement : un CPU 5600MHz, 
+tu seras SUR qu'il fonctionne à 5600MHz (d'ou le fait que ça soit une valeur basse). Mais, ils sont conçus pour tourner 
+plus vite puisque plus perf, mais rien ne te protège de tomber sur un modèle moins bon qui n'y arrivera pas (et tu ne 
+pourras rien faire, puisque c'est 5600 garanti).
+
+## Conclusion 
+
+Voilà, déjà la fin de ce plus petit article qui est compilation de plusieurs messages discord.

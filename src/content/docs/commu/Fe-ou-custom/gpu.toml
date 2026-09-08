@@ -1,0 +1,14 @@
+title = "Fe-ou-custom"
+slug = "commu/Fe-ou-custom/gpu"
+date = "2021-07-24"
+
+[author]
+pseudo = "Geckono"
+name = "Geckono"
+role = "Helper"
+avatar = "/avatars/geckono.png"
+
+[metadata]
+title_keyword = "FE"
+aux_keywords = ["GPU", "Custom", "Nvidia"]
+misc_keywords = ["MSI", "Asus", "Gigabyte"]
