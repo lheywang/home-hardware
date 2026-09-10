@@ -17,7 +17,7 @@ export default defineConfig({
 
 	integrations: [
 		starlight({
-			title: 'home-hardware',
+			title: '/home/hardware',
 
             defaultLocale: 'root',
             locales: {
