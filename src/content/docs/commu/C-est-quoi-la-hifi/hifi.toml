@@ -1,0 +1,14 @@
+title = "C-est-quoi-la-hifi"
+slug = "commu/C-est-quoi-la-hifi/hifi"
+date = "2021-10-05"
+
+[author]
+pseudo = "Cyber"
+name = "Cyber"
+role = "Membre"
+avatar = "/avatars/cyber.png"
+
+[metadata]
+title_keyword = "HIFI"
+aux_keywords = ["Audio", "Son", "Casque"]
+misc_keywords = ["Studio", "Norme"]

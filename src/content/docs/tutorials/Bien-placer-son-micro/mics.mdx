@@ -1,0 +1,51 @@
+---
+title: "Tuto : bien placer son micro"
+---
+
+import ArticleHeader from "../../../components/header.astro";
+import HardwareModule from "../../../components/module.astro";
+import Step from "../../../components/step.astro";
+import { Tabs, TabItem } from "@astrojs/starlight/components";
+import { Card, CardGrid } from "@astrojs/starlight/components";
+
+<ArticleHeader tomlPath="tutorials/Bien-placer-son-micro/mics.toml" />
+
+<p class="article-lead">
+	**Comment bien choisir et placer son micro ?**
+</p>
+
+On cherche à maximiser le ratio entre notre voix et les bruits de fond. Le placement du micro, 
+qui est souvent négligé, est ce qui influencera le plus ce ratio naturellement.
+
+- D'abord, il faudra bien choisir son micro ! Si le micro est trop peu sensible, on sera forcé 
+  de monter le gain très fort et de parasiter le signal avec un nouveau type de bruit de fond: les 
+  parasites et souffles électroniques. Voilà une bonne raison de privilégier un micro statique ! 
+  Beaucoup pensent que le bruit de fond acoustique est moins fort sur les micros dynamiques (necessitant 
+  beaucoup de gain) mais c'est parce qu'il est en fait caché par un souffle électronique constant 
+  encore plus fort !
+
+- Il faut éloigner le micro le plus possible des sources de bruit de fond, surtout les plus proches 
+  car éloigner le micro d'une source bruyante mais distante ne changera rien. (Regarder "là Loi en 
+  carré inverse" sur wikipedia pour plus de détails)
+
+- Pour les mêmes raisons, il faut se rapprocher le plus possible du micro et parler clairement afin 
+  que la pression acoustique de la voix soit forte devant la capsule du micro. Cela permettra de mettre 
+  moins de gain au pré-ampli pour avoir un bon niveau donc de baisser les bruits de fond (et d'éviter 
+  le souffle) !
+
+- Il faudra placer les sources de bruits de fond dans l'axe du micro où il est le moins sensible. 
+  Dans le cas d'un micro cardioïde, ce sera directement derrière la capsule, donc à l'opposé de là 
+  ou vous voulez vous placer. Si votre pièce est bien traitée, cela peut être très efficace.
+
+**Est-ce qu'un micro XLR est mieux qu'un micro USB ?**
+
+Réponse: Ça dépend !
+- Dans le cas d'un streaming débutant ou juste pour parler avec ces potes sur discord, le micro 
+  USB offre une expérience clé en main bien plus avantageuse financièrement pour la plupart du temps 
+  et plus simple qu'un micro XLR avec sa carte son.
+
+- Dans le cas d'un streaming professionnel ayant besoin d'une solution flexible, qualitative et 
+  personnalisée, il est totalement contre indiqué et l'utilisation de matériel professionnel devient 
+  indispensable.
+  Dans ce cas Il sera cependant inutile de s'attendre à un bon rendu sans connaissances approfondies 
+  de l'audio professionnel et du mixage, ou sans l'intervention d'un professionnel dans ce domaine. 

@@ -71,10 +71,13 @@ export default defineConfig({
                         "tutorials/drivers/drivers",
                         "tutorials/emplacement-par-defaut/emplacement",
                         "tutorials/enceintes-qui-buzz/buzz",
+                        "tutorials/casques-micro-gaming/mics",
+                        "tutorials/bien-placer-son-micro/mics",
                         "tutorials/formatter/format",
                         "tutorials/partitions/partitions",
                         "tutorials/pas-de-connexion-internet-pendant-l-installation/connexion",
-                        "tutorials/pilote-de-media-manquant/media"
+                        "tutorials/pilote-de-media-manquant/media",
+                        "tutorials/prendre-de-belles-photos/photos"
                     ]
                 },
                 {
@@ -89,6 +92,7 @@ export default defineConfig({
                         "commu/garanties-menteuses/garantie",
                         "commu/le-minage-est-il-mauvais/minage",
                         "commu/qu-est-ce-que-c-est-un-os/os",
+                        "commu/c-est-quoi-la-hifi/hifi",
                     ]
                 }
 			],
