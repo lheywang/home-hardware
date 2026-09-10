@@ -1,0 +1,152 @@
+{
+  "237": {
+    "url": "https://www.malekal.com/unmountable-boot-volume-windows-10-11/",
+    "name": "UNMOUNTABLE_BOOT_VOLUME",
+    "cause": "Volume syst\u00e8me illisible ou corrompu",
+    "checks": "Erreurs disque, syst\u00e8me de fichiers"
+  },
+  "26": {
+    "url": "https://www.malekal.com/resoudre-ecran-bleu-bsod-memory-management-windows-10-11/",
+    "name": "MEMORY_MANAGEMENT",
+    "cause": "Erreur de gestion de la m\u00e9moire",
+    "checks": "RAM, XMP/overclocking, pilotes"
+  },
+  "292": {
+    "url": "https://www.malekal.com/resoudre-ecran-bleu-whea-uncorrectable-error-bsod/",
+    "name": "WHEA_UNCORRECTABLE_ERROR",
+    "cause": "Erreur mat\u00e9rielle signal\u00e9e par le processeur",
+    "checks": "CPU, carte m\u00e8re, alimentation, surchauffe"
+  },
+  "314": {
+    "url": "https://www.malekal.com/kernel-mode-heap-corruption-bsod-crash-ecran-bleu/",
+    "name": "KERNEL_MODE_HEAP_CORRUPTION",
+    "cause": "Corruption du tas m\u00e9moire du noyau",
+    "checks": "Pilotes (souvent GPU), m\u00e9moire"
+  },
+  "126": {
+    "url": "https://www.malekal.com/resoudre-ecran-bleu-system-thread-exception-not-handled-bsod/",
+    "name": "SYSTEM_THREAD_EXCEPTION_NOT_HANDLED",
+    "cause": "Exception non g\u00e9r\u00e9e par un pilote",
+    "checks": "Pilotes GPU/chipset, pilotes r\u00e9cents"
+  },
+  "116": {
+    "url": "https://www.malekal.com/resoudre-bad-system-config-info-au-demarrage-de-windows-10/",
+    "name": "BAD_SYSTEM_CONFIG_INFO",
+    "cause": "Configuration syst\u00e8me ou de d\u00e9marrage incoh\u00e9rente",
+    "checks": "BCD, registre, mise \u00e0 jour \u00e9chou\u00e9e"
+  },
+  "80": {
+    "url": "https://www.malekal.com/code-arret-page-fault-in-nonpaged-area-windows-10-11-bsod/",
+    "name": "PAGE_FAULT_IN_NONPAGED_AREA",
+    "cause": "Acc\u00e8s invalide \u00e0 une zone m\u00e9moire critique",
+    "checks": "RAM, pilotes, antivirus"
+  },
+  "127": {
+    "url": "",
+    "name": "UNEXPECTED_KERNEL_MODE_TRAP",
+    "cause": "Exception mat\u00e9rielle ou noyau inattendue",
+    "checks": "RAM, CPU, overclocking, pilotes bas niveau"
+  },
+  "239": {
+    "url": "https://www.malekal.com/bsod-critical_process_died-ecran-bleu-plantage-windows/",
+    "name": "CRITICAL_PROCESS_DIED",
+    "cause": "Un processus syst\u00e8me essentiel s\u2019est arr\u00eat\u00e9",
+    "checks": "Fichiers syst\u00e8me, pilotes r\u00e9cents, disque/RAM"
+  },
+  "265": {
+    "url": "",
+    "name": "CRITICAL_STRUCTURE_CORRUPTION",
+    "cause": "Corruption de structures critiques du noyau",
+    "checks": "Pilotes bas niveau, m\u00e9moire, mat\u00e9riel instable"
+  },
+  "307": {
+    "url": "https://www.malekal.com/resoudre-ecran-bleu-dpc-watchdog-violation-bsod/",
+    "name": "DPC_WATCHDOG_VIOLATION",
+    "cause": "Routine noyau trop longue \u00e0 s\u2019ex\u00e9cuter",
+    "checks": "Pilotes stockage/USB, firmware SSD"
+  },
+  "159": {
+    "url": "https://www.malekal.com/power-driver-state-failure/",
+    "name": "DRIVER_POWER_STATE_FAILURE",
+    "cause": "Mauvaise gestion des transitions d\u2019alimentation",
+    "checks": "Pilotes r\u00e9seau/USB/GPU, veille/reprise"
+  },
+  "30": {
+    "url": "https://www.malekal.com/corriger-ecran-bleu-kmode-exception-not-handled-bsod/",
+    "name": "KMODE_EXCEPTION_NOT_HANDLED",
+    "cause": "Exception critique non g\u00e9r\u00e9e en mode noyau",
+    "checks": "Pilotes incompatibles, logiciels bas niveau"
+  },
+  "278": {
+    "url": "https://www.malekal.com/video_tdr_error-ou-video_tdr_failure-sur-nvlddmkm-sys-atikmpag-sys-ou-igdkmd64-sys/",
+    "name": "VIDEO_TDR_FAILURE",
+    "cause": "Le GPU ne r\u00e9pond plus dans le temps imparti",
+    "checks": "Pilote graphique, GPU, alimentation"
+  },
+  "209": {
+    "url": "https://www.malekal.com/resoudre-ecran-bleu-irql-not-less-or-equal-bsod/",
+    "name": "DRIVER_IRQL_NOT_LESS_OR_EQUAL",
+    "cause": "Acc\u00e8s m\u00e9moire incorrect par un pilote",
+    "checks": "Pilotes r\u00e9seau/USB/stockage"
+  },
+  "123": {
+    "url": "https://www.malekal.com/erreur-inaccessible-boot-device-demarrage-windows-10/",
+    "name": "INACCESSIBLE_BOOT_DEVICE",
+    "cause": "Windows ne peut pas acc\u00e9der au disque syst\u00e8me",
+    "checks": "BIOS/UEFI (AHCI/RAID), pilotes stockage, disque"
+  },
+  "10": {
+    "url": "https://www.malekal.com/resoudre-ecran-bleu-irql-not-less-or-equal-bsod/",
+    "name": "IRQL_NOT_LESS_OR_EQUAL",
+    "cause": "Acc\u00e8s m\u00e9moire \u00e0 un niveau d\u2019interruption invalide",
+    "checks": "Pilotes d\u00e9fectueux, RAM"
+  },
+  "122": {
+    "url": "https://www.malekal.com/resoudre-kernel-data-inpage-error-bsod/",
+    "name": "KERNEL_DATA_INPAGE_ERROR",
+    "cause": "\u00c9chec de lecture de donn\u00e9es depuis le stockage",
+    "checks": "Disque/SSD, contr\u00f4leur, erreurs disque"
+  },
+  "313": {
+    "url": "https://www.malekal.com/resoudre-kernel-security-check-failure-bsod/",
+    "name": "KERNEL_SECURITY_CHECK_FAILURE",
+    "cause": "\u00c9chec de v\u00e9rification de coh\u00e9rence du noyau",
+    "checks": "Pilotes, corruption m\u00e9moire"
+  },
+  "257": {
+    "url": "https://www.malekal.com/corriger-ecran-bleu-clock-watchdog-timeout-windows-10-11-bsod/",
+    "name": "CLOCK_WATCHDOG_TIMEOUT",
+    "cause": "Un c\u0153ur CPU ne r\u00e9pond plus dans les d\u00e9lais",
+    "checks": "CPU, BIOS/UEFI, overclocking, alimentation"
+  },
+  "234": {
+    "url": "https://www.malekal.com/corriger-ecran-bleu-thread-stuck-in-device-driver-windows-10-11-bsod/",
+    "name": "THREAD_STUCK_IN_DEVICE_DRIVER",
+    "cause": "Le pilote graphique ne r\u00e9pond plus",
+    "checks": "GPU, pilote graphique"
+  },
+  "194": {
+    "url": "https://www.malekal.com/resoudre-ecran-bleu-bad-pool-header-bsod/",
+    "name": "BAD_POOL_CALLER",
+    "cause": "Mauvaise gestion de la m\u00e9moire noyau (pool)",
+    "checks": "Pilotes d\u00e9fectueux, logiciels bas niveau"
+  },
+  "36": {
+    "url": "https://www.malekal.com/code-arret-nfs-file-system-bsod/",
+    "name": "NTFS_FILE_SYSTEM",
+    "cause": "Erreur du syst\u00e8me de fichiers NTFS",
+    "checks": "Disque, syst\u00e8me de fichiers, pilotes stockage"
+  },
+  "59": {
+    "url": "https://www.malekal.com/resoudre-ecran-bleu-system-service-exception-bsod/",
+    "name": "SYSTEM_SERVICE_EXCEPTION",
+    "cause": "Erreur critique dans un service syst\u00e8me",
+    "checks": "Pilotes, logiciels tiers, m\u00e9moire"
+  },
+  "78": {
+    "url": "",
+    "name": "PFN_LIST_CORRUPT",
+    "cause": "Corruption des structures m\u00e9moire PFN",
+    "checks": "RAM, pilotes, overclocking/XMP, disque"
+  }
+}

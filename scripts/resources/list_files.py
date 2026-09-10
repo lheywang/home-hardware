@@ -17,7 +17,7 @@ def list_resources(source: Path, target: Path):
 
     # First, get all the files :
     files = source.glob("*")
-    output = [file.name for file in files]
+    output = [file.name for file in files if not file.name.endswith("json")]
 
     # Dump this as JSON
     with open(target, "w+") as f:

@@ -1,0 +1,17 @@
+{
+  "monitoring_cpuz": "https://www.cpuid.com/softwares/cpu-z.html",
+  "debug_memtest86": "https://www.memtest86.com/",
+  "debug_whocrashed": "https://www.resplendence.com/whocrashed",
+  "bench_prime96": "https://prime95.net/",
+  "bench_furmark": "https://geeks3d.com/furmark/",
+  "monitoring_coretemp": "https://www.alcpu.com/CoreTemp/",
+  "info_hwinfo": "https://www.hwinfo.com/",
+  "storage_crystaldiskinfo": "https://crystalmark.info/en/software/crystaldiskinfo/",
+  "monitoring_hwmonitor": "https://www.cpuid.com/softwares/hwmonitor.html",
+  "storage_crystaldiskmark": "https://crystalmark.info/en/software/crystaldiskmark/",
+  "info_cpuz": "https://www.cpuid.com/softwares/cpu-z.html",
+  "info_gpuz": "https://www.techpowerup.com/download/techpowerup-gpu-z/",
+  "drivers_ddu": "https://www.guru3d.com/download/display-driver-uninstaller-download/",
+  "oc_afterburner": "https://www.msi.com/Landing/afterburner",
+  "bench_occt": "https://www.ocbase.com/download-personal"
+}

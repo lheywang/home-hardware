@@ -9,7 +9,7 @@
 from pathlib import Path
 from processor import process
 from exporter import export
-from resources import list_resources
+from resources import list_resources, list_links, list_errors
 
 
 def fetch_ressources(folderName: str, basePath: Path) -> list[tuple[Path, Path]]:
@@ -51,5 +51,15 @@ if __name__ == "__main__":
         "resources/resources.json"
     )
     list_resources((Path(__file__) / Path("../../public/resources")).resolve(), output)
+
+    output = (Path(__file__) / Path("../../public")).resolve() / Path(
+        "resources/links.json"
+    )
+    list_links((Path(__file__) / Path("../../data/url")).resolve(), output)
+
+    output = (Path(__file__) / Path("../../public")).resolve() / Path(
+        "resources/errors.json"
+    )
+    list_errors((Path(__file__) / Path("../../data/errors")).resolve(), output)
 
     print("Done !")
