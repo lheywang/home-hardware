@@ -2,16 +2,16 @@
 title: "Technique : Processeurs - Comment marchent t-ils ?"
 ---
 
-import ArticleHeader from "../../../components/header.astro";
-import HardwareModule from "../../../components/module.astro";
-import Step from "../../../components/step.astro";
-import { Tabs, TabItem } from "@astrojs/starlight/components";
-import { Card, CardGrid } from "@astrojs/starlight/components";
+import ArticleHeader from "../../../components/header.astro"; 
+import HardwareModule from "../../../components/module.astro"; 
+import Step from "../../../components/step.astro"; 
+import { Tabs, TabItem } from "@astrojs/starlight/components"; 
+import { Card, CardGrid } from "@astrojs/starlight/components"; 
 
 <ArticleHeader tomlPath="articles/Processeurs/cpu.toml" />
 
 <p class="article-lead">
-  **Un processeur, le coeur de notre PC. Mais il fonctionne comment ?**
+  **Un processeur, le point central de notre PC. Mais il fonctionne comment ?**
 </p>
 
 Hello !
@@ -33,7 +33,7 @@ Nous allons voir ça ci-dessous !
 
 Pour commencer, il faut savoir que les processeurs (tous), ont peu les trier selon un paramètre : Leur architecture.
 
-Plusieurs grands noms existent d'architecture, que vous avez pu croiser : ARM, x86, mais aussi d'autres (AVR, RISCV...).
+Plusieurs grands noms existent d'architecture, que vous avez pu croiser : ARM, x86, mais aussi d'autres (AVR, RISC V...).
 
 **Mais une architecture, qu'est-ce ?**
 
@@ -43,8 +43,9 @@ fabricants optimisent ensuite cette opération pour aller le plus vite possible,
 
 Mais retournons à nos grains de sables, un processeur ça ressemble à quoi ?
 
-Comme évoqué dans un article précédent (Cf : Airflow), un processeur, en lui-même, c'est nettement plus petit que le
-boitier que vous avez en main. Si on zoome dessus (vraiment beaucoup), on peut apercevoir différentes zones :
+Comme évoqué dans un article précédent (CF : [Airflow](/articles/refroidissement-airflow-et-tdp/airflow/)), un processeur, 
+en lui-même, c'est nettement plus petit que le boîtier que vous avez en main. Si on zoome dessus (vraiment beaucoup), 
+on peut apercevoir différentes zones :
 
 ![core](./core.jpg)
 
@@ -53,7 +54,7 @@ plein de zones : Gestion DDR4 / DDR5, iGPU mais aussi, et surtout en plein milie
 intéressent aujourd'hui.
 
 Malheureusement, nous ne pourrons zoomer plus, cela devient trop petit (et complexe). Pour cela, nous allons regarder un
-schéma logique des opérations réalisées, à chaque fois dans le processeur. Pour garder le lien avec la photo ci-dessous,
+schéma logique des opérations réalisées, à chaque fois dans le processeur. Pour garder le lien avec la photo ci-dessous, 
 vous pouvez imaginer le dessin ci-dessous dans chaque case P-Core ou E-Core.
 
 ## Un coeur, ça fonctionne comment ?
@@ -75,11 +76,11 @@ la chambre (= execute). La dernière étape n'ayant de comparaison réelle dans 
 Votre processeur, il fait pareil, mais sur des maths (il ne pourra ranger votre chambre, désolé), et beaucoup plus vite
 (on parle de 5 000 000 000 de cycles par secondes sur les derniers modèles).
 
-## Les instructions, c'est quoi ?
+## Les instructions, qu'est-ce que c'est ?
 
 Je pense que vous vous en doutez, mais une instruction pour votre processeur, ce n'est pas français : Et vous avez raison !
 
-C'est en réalité un nombre, un code associé à une action. Ce code est standard par l'architecture de votre processeur (oui,
+C'est en réalité un nombre, un code associé à une action. Ce code est standard par l'architecture de votre processeur (oui, 
 encore elle...).
 
 Pour permettre une compréhension humaine des instructions processeur, on a inventé le langage le plus primaire qui existe :
@@ -135,7 +136,7 @@ Pour revenir à nous moutons ou transistors, devrai-je dire :
 
 Le hardware d'un cœur, ça ressemble à quoi ?
 
-Je vous épargne le schéma électrique, certainement illisible. Je vous ais trouvé un petit dessin, chez nous amis de Wikipédia :
+Je vous épargne le schéma électrique, certainement illisible. Je vous ai trouvé un petit dessin, chez nous amis de Wikipédia :
 
 ![sch](./sch.png)
 
@@ -145,19 +146,20 @@ Nous retrouvons des blocs déjà évoqués avant : Decoder, ALU (unité de calcu
 
 Nous n'y avons qu'ajouté des blocs "Registres" et "Interface Mémoire".
 
-- Registre, ce n'est que le penchant hardware d'une variable, on y stocke une valeur.
-- Interface mémoire, c'est ce qui permet de communiquer avec la RAM par exemple. Sur la photo du die en haut, cette
+* Registre, ce n'est que le penchant hardware d'une variable, on y stocke une valeur.
+* Interface mémoire, c'est ce qui permet de communiquer avec la RAM par exemple. Sur la photo du die en haut, cette
   interface mémoire passe par le Compute Fabric (bus de transfert, dont nous ne parlerons pas ici.)
 
 En noir, nous avons donc le trajet de la donnée : La ou nos nombres / informations passent.
 Et en vert, pour les plus fous : Cela représente des cas spéciaux (ex : Overflow : Nous atteignons le maximum possible).
 
-## Evolutions
+## Évolutions
 
-Pour finir cet article, je vais vous évoquer les évolutions qui sont apparues au cours de l'histoire : (quelques-unes,
+Pour finir cet article, je vais vous évoquer les évolutions qui sont apparues au cours de l'histoire : (quelques-unes, 
 pas toutes hein ?)
 
 <Tabs>
+
     <TabItem label="Extensions">
 
         Chaque fabricant, en respectant une architecture, peut y ajouter des extensions (= DLC). Cela
@@ -165,6 +167,7 @@ pas toutes hein ?)
         extension courante est le AMD64, extension qui permit de passer de 32 bits à 64 bits sur nos processeurs.
 
     </TabItem>
+
     <TabItem label="Pipeline">
 
         Dans les étapes décrites plus haut, au nombre de quatre occupent chacune un coup d'horloge : Un processeur à
@@ -175,6 +178,7 @@ pas toutes hein ?)
         d'un quart de tour, et hop, à la suite.
 
     </TabItem>
+
     <TabItem label="Prédiction">
 
         Cette évolution a été fortement liée à la Pipeline : En effet, elle posait un souci majeur :
@@ -189,15 +193,17 @@ pas toutes hein ?)
         gain pur !
 
     </TabItem>
+
     <TabItem label="Execution dans le désordre">
 
         Au cours du temps, on s'est rendu compte d'un gros point bloquant : Un code peut contenir des opérations lentes, pouvant
         bloquer l'entièreté du système, même si les suivantes ne dépendent PAS de cette instruction.
 
         Votre processeur détecte donc des événements, et permet aux instructions suivantes de s'executer en même temps, via un
-        réordancement ! Gros gain de performance ici !
+        réarrangement ! Gros gain de performance ici !
 
     </TabItem>
+
     <TabItem label="Superscalaire">
 
         Cette évolution est partie d'un constat : Un ALU (cf schéma) permet de réaliser plusieurs opérations,
@@ -218,8 +224,8 @@ les principes restent les mêmes. Elle est juste optimisée pour les perfs / con
 rétrocompatibilité folle...
 
 :::note
-Votre processeur x86 tout neuf est parfaitement capable d'executer du code initialement conçu pour un processeur en 1976 !
-A l'opposé, un processeur ARM récent (ARMv8a) n'est pas capable d'executer du code écrit en 2013 (ARMv7a)
+Votre processeur x86 tout neuf est parfaitement capable d'exécuter du code initialement conçu pour un processeur en 1976 !
+À l'opposé, un processeur ARM récent (ARMv8a) n'est pas capable d'exécuter du code écrit en 2013 (ARMv7a)
 :::
 
 Et voilà !

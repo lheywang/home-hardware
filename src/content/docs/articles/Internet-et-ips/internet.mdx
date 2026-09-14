@@ -2,11 +2,11 @@
 title: "Technique : Internet et IPs"
 ---
 
-import ArticleHeader from "../../../components/header.astro";
-import HardwareModule from "../../../components/module.astro";
-import Step from "../../../components/step.astro";
-import { Tabs, TabItem } from "@astrojs/starlight/components";
-import { Card, CardGrid } from "@astrojs/starlight/components";
+import ArticleHeader from "../../../components/header.astro"; 
+import HardwareModule from "../../../components/module.astro"; 
+import Step from "../../../components/step.astro"; 
+import { Tabs, TabItem } from "@astrojs/starlight/components"; 
+import { Card, CardGrid } from "@astrojs/starlight/components"; 
 
 <ArticleHeader tomlPath="articles/Internet-et-ips/internet.toml" />
 
@@ -18,9 +18,9 @@ Hello !
 
 Aujourd'hui, on va parler Internet :
 
-- Comment ça marche ?
-- Qu'est-ce qu'une adresse IP ?
-- Qu'est-ce qu'un serveur ?
+* Comment ça marche ?
+* Qu'est-ce qu'une adresse IP ?
+* Qu'est-ce qu'un serveur ?
 
 Aller, zou, on commence !
 
@@ -29,12 +29,12 @@ Aller, zou, on commence !
 Je ne vais pas détailler [l'histoire complète d'Internet, pour les plus intéressés voici la page
 Wikipédia](https://fr.wikipedia.org/wiki/Internet).
 
-Internet, par définition, ça implique une communication de données entre plusieurs ordinateurs,
+Internet, par définition, ça implique une communication de données entre plusieurs ordinateurs, 
 séparés par parfois plusieurs kilomètres (voire milliers de kilomètres).
 
 ### Mais comment on communique ?
 
-Pour cela, il faut un moyen efficace de transmettre une information sur de longues distances, et pour ça,
+Pour cela, il faut un moyen efficace de transmettre une information sur de longues distances, et pour ça, 
 l'Homme n'a pas trouvé mieux qu'un câble. Nous avons donc plusieurs câbles qui font le tour de la planète
 pour connecter continents à continents.
 
@@ -55,7 +55,7 @@ long en larges pour arriver dans les grandes villes, puis ça part de ces grande
 
 ### Et comment ont réparti à chaque nœud le trafic ?
 
-Pour chaque grande étape, on est utile un jeu de switches (le même type d'appareils que l'on a dans sa box internet,
+Pour chaque grande étape, on est utile un jeu de switches (le même type d'appareils que l'on a dans sa box internet, 
 ou achetés à part, mais en BEAUCOUP plus rapide !). Ces appareils utilisent le système IP pour adresser les bonnes
 informations à la bonne personne.
 
@@ -71,6 +71,7 @@ La liaison cuivre (ADSL / VDSL) existe encore. Elle est peu à peu mise hors ser
 ### Et dans la maison, ça communique comment ?
 
 <Tabs>
+
     <TabItem label="Wi-Fi">
 
        Soumis à un équipement dédié : Une carte Wi-Fi, soit en extension sur la carte mère,
@@ -78,12 +79,14 @@ La liaison cuivre (ADSL / VDSL) existe encore. Elle est peu à peu mise hors ser
         Le débit n'est pas forcément stable.
 
     </TabItem>
+
     <TabItem label="Ethernet">
 
         Toujours intégré à la carte mère, mais nécessite alors un accès câblé à la box (l'entrée d'internet dans la maison).
         C'est ce moyen qui permet le débit le plus grand et la meilleure stabilité.
 
     </TabItem>
+
     <TabItem label="CPL">
 
         Cette technique permet de faire passer un câble Ethernet via le réseau électrique de la maison.
@@ -107,7 +110,7 @@ Et maintenant, un sujet un poil plus complexe, que j'avais évoqué avant : l'ad
 de tirer un câble de chaque ordinateur vers chaque ordinateur dans le monde, nous avons mis en place un système d'adresses :
 Le protocole TCP/IP.
 
-À l'origine, cette adresse, sous la forme AAA.BBB.CCC.DDD permet d'identifier chaque ordinateur dans le monde. Cependant,
+À l'origine, cette adresse, sous la forme AAA. BBB. CCC. DDD permet d'identifier chaque ordinateur dans le monde. Cependant, 
 cette limite a été depuis bien longtemps dépassée. Il a donc été mis en place des astuces pour réduire virtuellement ces adresses.
 
 Ainsi, nous avons chacun une adresse locale (dans notre maison), et une adresse extérieure (notre box). Et ce système se
@@ -129,9 +132,9 @@ Il n'est donc pas possible d'identifier de quel appareil provient la requête vi
 
 ## Mais c'est quoi une box ?
 
-Comme détaillé, la box est l'appareil réseau qui fait l'interface entre votre réseau, et le réseau internet "mondial".
-Cet equipement est fourni par votre fournisseur d'accès Internet, et il n'est que rarement possible de le remplacer
-par un autre. Cet equipement embarque généralement un switch (pour les quelques ports ethernet au dos), ainsi qu'un
+Comme détaillé, la box est l'appareil réseau qui fait l'interface entre votre réseau et le réseau internet "mondial".
+Cet équipement est fourni par votre fournisseur d'accès Internet, et il n'est que rarement possible de le remplacer
+par un autre. Cet équipement embarque généralement un switch (pour les quelques ports Ethernet au dos), ainsi qu'un
 modem pour communiquer via fibre optique / ADSL.
 
 Petite remarque : Cet exemple s'appuie sur le mécanisme IPv4, un plus récent IPv6 identifie lui directement chaque
@@ -142,11 +145,11 @@ Remarque 2 : En pratique, il est tout de même possible d'identifier un appareil
 informations sont transmises avec. Cela inclut l'adresse MAC (une adresse matérielle de la carte réseau, un pc peut
 donc en avoir 2, voire plus !).
 
-Les dernières informations (Gateway / Mask) concernent des parties de l'adresse plus avancées.
+Les dernières informations (Gateway / Masque) concernent des parties de l'adresse plus avancées.
 
 La première, c'est l'adresse de votre box, mais vue du côté réseau privé.
 
-Vous effectuez une requête à votre box à cette adresse, qui prend ensuite on adresse publique !
+Vous effectuez une requête à votre box à cette adresse, qui prend ensuite ont adresse publique !
 
 Le masque, c'est un usage avancé du réseau IP qui permet d'isoler différents appareils pourtant électriquement
 connectés entre eux. Cela permet donc un management plus poussé, que nous n'aborderons pas ici.
@@ -174,18 +177,18 @@ Par exemple, un serveur de téléchargement va exploiter des processeurs très r
 de gros volumes de données. Un serveur de cloud gaming va ajouter plusieurs cartes graphiques pour ce type
 d'usage.
 
-L'ensemble des serveurs ont des interfaces réseaux très rapides (de l'ordre de 10 Gb/s à 100 Gb/s). C'est
+L'ensemble des serveurs ont des interfaces réseaux très rapides (de l'ordre de 10 Gbps à 100 Gbps). C'est
 ce qui leur permet de répondre rapidement au grand nombre de demandes.
 
-En règle générale, un service important n'est pas basé sur un seul serveur, mais sur plusieurs dizaines,
+En règle générale, un service important n'est pas basé sur un seul serveur, mais sur plusieurs dizaines, 
 réparties dans le monde, pour assurer une continuité de service.
 
-Et c'est aussi grâce à ça qu'en changeant de serveur, on peut parfois profiter de meilleures performances,
+Et c'est aussi grâce à ça qu'en changeant de serveur, on peut parfois profiter de meilleures performances, 
 ce serveur étant peut-être plus performant, ou moins occupé actuellement.
 
 :::note
 À titre d'exemple, je possède mon propre serveur pour un cloud personnel. La configuration est très modeste
-(i7 6700, 16 GB, 12 TB) mais suffit amplement à mon usage. L'interface réseau est de 1 Gb/s, ce qui
+(i7 6700, 16 GB, 12 TB) mais suffit amplement à mon usage. L'interface réseau est de 1 Gbps, ce qui
 est standard dans un pc actuel. Il tourne bien évidemment sous Linux, comme la majorité des [serveurs](/articles/les-os/os/)
 :::
 

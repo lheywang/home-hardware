@@ -2,11 +2,11 @@
 title: "Technique : Refroidissement: airflow et tdp"
 ---
 
-import ArticleHeader from "../../../components/header.astro";
-import HardwareModule from "../../../components/module.astro";
-import Step from "../../../components/step.astro";
-import { Tabs, TabItem } from "@astrojs/starlight/components";
-import { Card, CardGrid } from "@astrojs/starlight/components";
+import ArticleHeader from "../../../components/header.astro"; 
+import HardwareModule from "../../../components/module.astro"; 
+import Step from "../../../components/step.astro"; 
+import { Tabs, TabItem } from "@astrojs/starlight/components"; 
+import { Card, CardGrid } from "@astrojs/starlight/components"; 
 
 <ArticleHeader tomlPath="articles/Refroidissement:-airflow-et-tdp/airflow.toml" />
 
@@ -31,10 +31,11 @@ seuls certains nécessitent une solution de refroidissement. Cette chauffe provi
 composant, qui exploite cette énergie pour calculer et communiquer.
 
 Cette chauffe, elle a une unité : Le Watt, qui est exprimé sous un nom très connu, et mal compris : le TDP (Thermal Dissipation Power).
-Cette valeur à un sens physique : La puissance moyenne que doit être capable d'absorber le refroidissement pour assurer le fonctionnement
+Cette valeur a un sens physique : La puissance moyenne que doit être capable d'absorber le refroidissement pour assurer le fonctionnement
 du composant en dessous. Mais ça, c'est chez les Bisounours... En réalité, le calcul est moins doté de sens :
 
 <Tabs>
+
     <TabItem label="En clair">
 
         Chaque composant de votre pc, même le plus petit qu'on a pu voir dans le dernier article, chauffent. Tous à des niveaux différents et
@@ -50,6 +51,7 @@ du composant en dessous. Mais ça, c'est chez les Bisounours... En réalité, le
         moitié de son boost nominale !
 
     </TabItem>
+
     <TabItem label="Pour les plus matheux ...">
 
         Chaque composant de votre pc, même le plus petit qu'on a pu voir dans le dernier article, chauffent. Tous à des niveaux différents et
@@ -108,7 +110,7 @@ supérieure à celle d'un radiateur électrique de maison. Autant dire, c'est la
 :::note
 **Petit aparté** : Des sécurités contre la surchauffe assurent un fonctionnement jusqu'à environ 105 degrés. Cependant, le processeur
 est capable de fonctionner sans souci jusqu'à une température de 150 degrés, ne moyennant qu'une réduction de ses fréquences et de
-sa durée de vie (de toute façon trop longue pour en voir le bout en usage réel). Le silicum, quant à lui, ne fond qu'à 1414 degrés,
+sa durée de vie (de toute façon trop longue pour en voir le bout en usage réel). Le silicium, quant à lui, ne fond qu'à 1414 degrés, 
 aucuns risques donc.
 :::
 
@@ -120,7 +122,7 @@ agrandir peu à peu la surface.
 
 La première, l'IHS joue un double rôle : Protéger la puce en elle-même, et conduire la chaleur vers l'extérieur. Elle est reliée au
 processeur via une interface thermique, généralement de la pâte thermique de qualité ou une soudure sur le processeur directement.
-Mais, cette surface, quoique plus grande, reste insuffisante pour assurer le refroidissement : Pour rester dans l'exemple précédent,
+Mais, cette surface, quoique plus grande, reste insuffisante pour assurer le refroidissement : Pour rester dans l'exemple précédent, 
 on est toujours à environ 2x notre radiateur électrique. Cela reste trop élevé pour assurer un usage normal.
 
 Après cette IHS, vient l'élément réellement en charge de la dissipation : Le radiateur.
@@ -135,7 +137,7 @@ Mais avant ce radiateur, se trouve un élément : La pâte thermique. Et cette d
 à conduire la chaleur.
 
 :::note
-Les surfaces de l'IHS et du radiateur ne sont jamais parfaitement plates. La pâte thermique est là pour boucher ces aspérités,
+Les surfaces de l'IHS et du radiateur ne sont jamais parfaitement plates. La pâte thermique est là pour boucher ces aspérités, 
 et donc améliorer la conduction. Cependant, le gros de la conduction est réalisé entre l'IHS et le radiateur directement, sans
 passer par la pâte. Cette dernière est en effet 20 à 25 fois moins performante que le contact entre les deux métaux. C'est pour
 cette raison que certains modifient leur IHS, radiateurs, voire démontent l'IHS : Ils veulent réduire le nombre d'étapes thermiques.
@@ -149,20 +151,25 @@ chaleur, et non la dissiper.
 
 <Tabs>
   <TabItem label="Les caloducs">
-    Ces tubes en cuivres, très présents dans les ventirads, GPU ou pc portables,
+
+    Ces tubes en cuivres, très présents dans un ventirad, GPU ou pc portables,
     ont un rôle simple : Déplacer la chaleur. À l'intérieur se trouve un liquide
     porteur de chaleur qui va circuler du côté chaud vers le côté froid, et
     inversement. Seul un effet physique est ici moteur, ce qui explique leur
     silence et leur fiabilité.
+
   </TabItem>
   <TabItem label="Eau">
+
     Ce liquide est bon porteur de chaleur. En utilisant un système à base de
     pompe, il devient facile de déplacer la chaleur d'un point vers un autre.
     C'est ce principe qui est utilisé dans le watercooling (avec des additifs).
     Le watercooling custom est aussi basé sur cette solution, en utilisant des
     éléments choisis séparément au lieu d'un ensemble.
+
   </TabItem>
   <TabItem label="Huile">
+
     Ce liquide particulièrement porteur est tellement efficace que son contact
     seul à la surface de l'IHS suffit à maintenir le processeur à une
     température acceptable. C'est une solution utilisée souvent dans les
@@ -172,6 +179,7 @@ chaleur, et non la dissiper.
     son PC DANS son watercooling. Elle présente l'avantage de pouvoir être
     mutualisé avec d'autres serveurs, et donc économiser de la place et des
     couts.
+
   </TabItem>
 </Tabs>
 
@@ -179,7 +187,7 @@ Quelle que soit la solution, un radiateur sera l'élément final et s'assurera d
 
 ## Dernier sujet : Que faire de la chaleur dissipée ?
 
-C'est bien beau, maintenant, on sait d'où vient la chaleur, et comment est déplacée. Une dernière problématique apparait donc :
+C'est bien beau, maintenant, on sait d'où vient la chaleur, et comment est déplacée. Une dernière problématique apparaît donc :
 Que faire de cet air chaud ?
 
 Naturellement, l'air chaud se déplace par convection, c'est-à-dire que l'air chaud monte et l'air froid descend. Cet effet est
@@ -189,61 +197,69 @@ de presque 10 Kg...
 
 ![heat](./airflow.png)
 
-Pour se débarrasser de cette bulle d'air chaud, si la solution naturelle ne suffit pas, on peut la forcer. Avec l'aide d'un ventilateur,
+Pour se débarrasser de cette bulle d'air chaud, si la solution naturelle ne suffit pas, on peut la forcer. Avec l'aide d'un ventilateur, 
 on va pousser l'air chaud plus loin, essayant donc de maintenir une température autour des ailettes la plus constante possible pour
-conserver les performances de votre système. Avec suffisament d'air frais qui passe au travers d'un radiateur, il devient possible
-d'en réduire sa taille tout en conservant un refroidissement similaire. Par exemple, dans les serveurs on refroidi un processeur
-consommant beaucoup avec un petit radiateur, mais un débit d'air extrèmement important !
+conserver les performances de votre système. Avec suffisamment d'air frais qui passe au travers d'un radiateur, il devient possible
+d'en réduire sa taille tout en conservant un refroidissement similaire. Par exemple, dans les serveurs, on refroidit un processeur
+consommant beaucoup avec un petit radiateur, mais un débit d'air extrêmement important !
 
 Cependant, votre ventilation pour se montrer efficace doit respecter quelques astuces :
 
-- Pensez à ne pas pousser de l'air chaud dans votre radiateur, cela aura un effet contreproductif
+* Pensez à ne pas pousser de l'air chaud dans votre radiateur, cela aura un effet contre-productif
 
 Partant de ce fait, on arrive sur un thème très vague :
 
 ## L'airflow.
 
-Ce dernier consiste en la conception d'un boitier, le placement des ventilateurs et ouvertures de façon à optimiser le refroidissement.
+Ce dernier consiste en la conception d'un boîtier, le placement des ventilateurs et ouvertures de façon à optimiser le refroidissement.
 Quelques astuces peuvent être données pour faire son airflow de la meilleure de façon possible :
 
 <Tabs>
   <TabItem label="Entrées">
+
     Une entrée d'air frais doit être accessible pour chaque composant sensible.
     Cette entrée doit se trouver là où l'air frais se place naturellement, soit
     en bas. À défaut, on évite les entrées proches d'un mur, plus susceptible
-    d'être chauds, donc sur l'avant du boitier (exposé à l'intérieur de la pièce
+    d'être chauds, donc sur l'avant du boîtier (exposé à l'intérieur de la pièce
     donc).
+
   </TabItem>
   <TabItem label="Sorties">
+
     Les sorties d'air chaud doivent être placées de manière à expulser l'air
     chaud au plus vite, sans perturber les flux d'air frais : Ainsi, il faut les
-    placer sur le haut du boitier, et sur l'arrière du boitier (généralement
+    placer sur le haut du boîtier, et sur l'arrière du boîtier (généralement
     placées en haut).
+
   </TabItem>
   <TabItem label="Ouvertures">
+
     Chaque entrée / sortie doit être dégagée : Essayer d'aspirer de l'air à
     travers une vitre ne marche pas bien. Cela réduit fortement l'airflow
     global.
+
   </TabItem>
-  <TabItem label="Equilibre">
+  <TabItem label="Équilibre">
+
     Il devrait y avoir environ autant d'entrée que de sorties. Ne faire que
     entrer de l'air, ou sortir est contre productif : Avec aucun accès, ou
     aucune sorties, l'airflow est mauvais.
+
   </TabItem>
 </Tabs>
 
 Sur l'image, on a un exemple d'air flow correct : Deux entrées sur l'avant, et des sorties en haut et sur l'arrière. Certes, il n'y a
 pas autant d'entrées que de sorties, et cela pourrait le rendre meilleur.
 
-Il n'existe aucune manière de quantifier l'airflow : On peut le considerer réussi si les températures sont satisfaisantes,
+Il n'existe aucune manière de quantifier l'airflow : On peut le considérer réussi si les températures sont satisfaisantes, 
 et qu'aucun composant ne se limite.
 
-Est ce que l'airflow est important ?
+**Est-ce que l'airflow est important ?**
 
-OUI ! C'est même primordial. Un bon airflow compense sans soucis des ventilateurs moins performants, mais l'inverse ne sera pas vrai. Prenez plutot
-des ventilateurs qui vous plaisent avec un bon boitier que l'inverse.
+Oui ! C'est même primordial. Un bon airflow compense sans souci des ventilateurs moins performants, mais l'inverse ne sera pas vrai. Prenez plutot
+des ventilateurs qui vous plaisent avec un bon boîtier que l'inverse.
 
-Un bon airflow peut sans soucis vous réduire la température de fonctionnement de votre pc, de plusieurs degrés voire dizaines de degrés !
+Un bon airflow peut sans souci vous réduire la température de fonctionnement de votre pc, de plusieurs degrés, voire dizaines de degrés !
 
 C'est (déjà) la fin de l'article, à la prochaine !
 

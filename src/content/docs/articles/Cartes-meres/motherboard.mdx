@@ -2,11 +2,11 @@
 title: "Technique : Cartes mères : Entre processeurs et périphériques"
 ---
 
-import ArticleHeader from "../../../components/header.astro";
-import HardwareModule from "../../../components/module.astro";
+import ArticleHeader from "../../../components/header.astro"; 
+import HardwareModule from "../../../components/module.astro"; 
 
-import { Tabs, TabItem } from "@astrojs/starlight/components";
-import { Card, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem } from "@astrojs/starlight/components"; 
+import { Card, CardGrid } from "@astrojs/starlight/components"; 
 
 <ArticleHeader tomlPath="articles/Cartes-mères/motherboard.toml" />
 
@@ -46,9 +46,12 @@ J'ai pu compter au moins 63 circuits intégrés, chacun ayant un rôle précis d
 
 <HardwareModule idNum="01" nom="Socket" tag="Interface Principale" bus="LGA 1700 / AM5">
    
+
     En premier, le socket. C'est là où l'on pose sur le processeur, sur les fameux pins à ne pas tordre.
 
-    ![Schéma TSV](./Socket_AM5_pinmap.svg)
+    
+
+![Schéma TSV](./Socket_AM5_pinmap.svg)
 
     Voilà pour le fun un petit schématique de ses branchements. En noir : La masse électrique. En rouge et en orange (bas) : Les alimentations.
     Donc avec ses deux fonctions, une bonne partie des pins sont occupés ! Eh oui, il en faut pour assumer les 300W de certains modèles !
@@ -74,11 +77,15 @@ J'ai pu compter au moins 63 circuits intégrés, chacun ayant un rôle précis d
 
     Le chipset est donc de l'autre côté de ce bus, et c'est lui qui gère toutes les interfaces rapides du PC (PCIe supplémentaires, Ethernet...).
 
-    ![Schéma TSV](./chipset.png)
+    
+
+![Schéma TSV](./chipset.png)
 
     Une petite photo de ce composant particulièrement important, étant donné de son rôle d'interface processeur et le reste des périphériques.
 
-    ![Schéma TSV](./Chipset_diag.png)
+    
+
+![Schéma TSV](./Chipset_diag.png)
 
     Effectivement, comme le montre le petit schéma Intel : le chipset est connecté entre le processeur, et un grand nombre d'interfaces :
     Ethernet, Wifi, Audio, SATA, USB, ainsi que les horloges de la carte mère.
@@ -91,7 +98,9 @@ J'ai pu compter au moins 63 circuits intégrés, chacun ayant un rôle précis d
 
     Commençons par tous les périphériques connectés en PCIe, et il y en a un bon petit nombre.
 
-    ![Schéma TSV](./PCIe.png)
+    
+
+![Schéma TSV](./PCIe.png)
 
     On peut commencer par trouver un contrôleur SATA (à droite), caché dans le coin inférieur droit de la carte mère. Il génère deux ports SATA à
     partir d'une ligne PCIe 1.0x1. Du côté de l'IO arrière, on commence avec deux exemplaires, l'Intel S1423L42 (à gauche). Derrière ce doux nom se
@@ -99,7 +108,9 @@ J'ai pu compter au moins 63 circuits intégrés, chacun ayant un rôle précis d
     elle aussi alimentée en PCIe 3.0x1. Et maintenant, de l'USB un peu rapide avec le double port thunderbolt 4 : Lui, c'est carrément 4 lignes PCIe 4.0 qui
     lui sont dédiées pour encaisser les 2x 40 Gbps de chaque port.
 
-    ![Schéma TSV](./TB4.png)
+    
+
+![Schéma TSV](./TB4.png)
 
     Petit détail technique sur le module ci-dessus, celui du thunderbolt 4 : On remarque deux entrées Mini-DP, utiles pour connecter des écrans en USB-C.
 
@@ -118,7 +129,9 @@ J'ai pu compter au moins 63 circuits intégrés, chacun ayant un rôle précis d
 
     Pour cela, la Z790 dispose d'un étage d'alimentation très solide... Cette partie est appelée VRM (pour Voltage Regulator Module)
 
-    ![Schéma TSV](./VRM.png)
+    
+
+![Schéma TSV](./VRM.png)
 
     Il s'agit de ces petits carrés gris clair, et leur petit composant à côté. Ce sont eux qui depuis le 12V de l'alimentation fabriquant le 1,2 V nécessaire
     pour le processeur. Leur fonctionnement pourrait faire un article dédié, mais pour expliquer très rapidement : On appelle ça une alimentation à découpage,
@@ -138,8 +151,12 @@ J'ai pu compter au moins 63 circuits intégrés, chacun ayant un rôle précis d
 </HardwareModule>
 
 <HardwareModule idNum="05" nom="Contrôle" tag="MCU" bus="SPI">
+
     
-    ![Schéma TSV](./MB_MCU.png)
+
+    
+
+![Schéma TSV](./MB_MCU.png)
 
     Et voilà ce fameux chef, c'est en réalité lui qui gère toutes les fonctions "automatiques" de votre carte mère. Il profite d'une communication directe
     avec le processeur, les VRM, et les contrôleurs ventilateurs et RGB / aRGB. C'est donc lui qui vous donne de faux espoirs quand votre pc s'allume,
@@ -157,20 +174,24 @@ J'ai pu compter au moins 63 circuits intégrés, chacun ayant un rôle précis d
 
     Le SPI permet de communiquer avec le BIOS (une simple mémoire, exécutée par le contrôleur de carte mère puis le processeur). Flasher un BIOS revient à
     réécrire cette mémoire, ce qui explique l'impossibilité de revenir en arrière par exemple, ou les gros soucis si cette mémoire est corrompue.
-    L'I2C permet la communication avec la majorité des capteurs de température, trackpads pour les pc portables et les câbles HDMI / DP. En effet, c'est
+    L'I2C permet la communication avec la majorité des capteurs de température, pavé tactiles pour les pc portables et les câbles HDMI / DP. En effet, c'est
     ce bus qui permet à Windows de venir récupérer la résolution et la fréquence d'un écran nouvellement branché. (Désole, il ne le devine pas).
-    Le PMBUs est lui dédié au VRM et circuits de puissance (VRM...)
+    Le PMBUS est lui dédié au VRM et circuits de puissance (VRM...)
 
     </details>
 
 </HardwareModule>
 
 <HardwareModule idNum="06" nom="Communications" tag="IO" bus="">
+
     
-    Et en parlant communications, on arrive sur la dernière famille de composants : Les ReTimers. Ces composants, actifs, mais n'ayant aucun rôle de conversion,
+
+    Et en parlant communications, on arrive sur la dernière famille de composants : Les ReTimers. Ces composants, actifs, mais n'ayant aucun rôle de conversion, 
     sont pourtant très importants :
 
-    ![Schéma TSV](./ReTimers.png)
+    
+
+![Schéma TSV](./ReTimers.png)
 
     <Tabs>
     <TabItem label="En clair">

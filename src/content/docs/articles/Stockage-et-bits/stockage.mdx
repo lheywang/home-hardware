@@ -2,11 +2,11 @@
 title: "Technique : Stockage-et-bits"
 ---
 
-import ArticleHeader from "../../../components/header.astro";
-import HardwareModule from "../../../components/module.astro";
-import Step from "../../../components/step.astro";
-import { Tabs, TabItem } from "@astrojs/starlight/components";
-import { Card, CardGrid } from "@astrojs/starlight/components";
+import ArticleHeader from "../../../components/header.astro"; 
+import HardwareModule from "../../../components/module.astro"; 
+import Step from "../../../components/step.astro"; 
+import { Tabs, TabItem } from "@astrojs/starlight/components"; 
+import { Card, CardGrid } from "@astrojs/starlight/components"; 
 
 <ArticleHeader tomlPath="articles/Stockage-et-bits/stockage.toml" />
 
@@ -23,7 +23,9 @@ Aller, petit tour historique avec explications !
 Toute cette histoire de bits, elle a commencé avec les débuts de l'informatique, dans les années 50, et depuis évolue...
 
 ![hdd](./hdd.jpeg)
+
 ![hdd](./hdd2.jpg)
+
 ![ssd](./ssd.jpg)
 
 N'est-ce pas beau, 70 ans d'évolution ?
@@ -32,14 +34,14 @@ Et non, vous ne rêvez pas, les deux armoires d'une tonne chacune au premier pla
 Capables de débiter... 8.8 Ko/s au maximum, il faut être patient... Au centre, on y voit un HDD, puis un SSD... De
 plus en plus de stockage dans de moins en moins de place
 
-Depuis, nous avons augmenté la capacité d'un facteur 8 000 000, réduits la taille d'un facteur 56 000, ou réduis le prix
+Depuis, nous avons augmenté la capacité d'un facteur 8 000 000, réduits la taille d'un facteur 56 000, ou réduit le prix
 d'un facteur 6 800 000 000 ! (et c'est le cas pour bien d'autres facteurs encore !)
 
 ## Mais comment que ça marche un HDD ?
 
 Le principe est assez simple, la réalisation un peu moins.
 
-HDD, ça veut dire Hard Drive Disk, connu chez nous sous le nom de Disque Dur. Et ils ne portent pas leur nom aux hasards,
+HDD, ça veut dire 'Hard Drive Disk', connu chez nous sous le nom de Disque Dur. Et ils ne portent pas leur nom aux hasards, 
 en effet l'information est stockée sur des disques, qui sont... bah durs.
 
 Ces disques sont en réalité magnétiques, et ils stockent l'information en modifiant le champ magnétique de ces disques.
@@ -64,7 +66,7 @@ Désormais, elles ne bougent plus que sur une seule dimension.
 
 Et pour améliorer (encore) les performances, on a essayé d'accélérer les disques (latence plus faible et débit supérieur)
 mais il a pour cela fallu les réduire en taille. Eh oui, faire tourner un disque de 60 cm de diamètre pour les premiers HDD
-à +1000 tours par minute, c'est complexe. Au cours de l'histoire, les disques se sont donc montrés de plus en plus petits (jusqu'à 1.8 pouce),
+à +1000 tours par minute, c'est complexe. Au cours de l'histoire, les disques se sont donc montrés de plus en plus petits (jusqu'à 1.8 pouce), 
 et de plus en plus rapides (+ 10 000 tours par minutes).
 
 Pour finir, d'autres technologies sont apparues, notamment vis-à-vis des matériaux ou du placement des têtes. Ces disques
@@ -78,7 +80,7 @@ positionnement des têtes de lecture, ainsi que le traitement des données et la
 Eh oui, depuis longtemps (fin des années 80), on sait produire des mémoires électroniques pures, nommées NAND et NOR. Et
 attention, le monde de la mémoire Flash (tout ce qui n'est pas disque dur), ce n'est pas forcément meilleur !
 
-Cette mémoire flash, on la croise communément sous le nom SSD, pour Solid State Drive. Ce nom vient de l'absence d'éléments
+Cette mémoire flash, on la croise communément sous le nom SSD, pour 'Solid State Drive'. Ce nom vient de l'absence d'éléments
 mécaniques notamment.
 
 En voici un petit exemplaire de mémoire Flash. Technologiquement proche d'un SSD, mais en performances... Oula ! N'en rêvez
@@ -88,7 +90,7 @@ pas, ce petit truc est sacrément lent...
 
 ## Mais comment que ça marche, de la mémoire Flash ?
 
-Tout est basé sur des transistors (eh oui, ces démons) de technologie MOS. Pour ici, pas besoin de tout savoir (ouuuf),
+Tout est basé sur des transistors (eh oui, ces démons) de technologie MOS. Pour ici, pas besoin de tout savoir (ouf), 
 mais voilà la base : Un transistor agit comme un interrupteur, commandable électriquement. Là où ça devient rigolo, c'est
 que selon la force d'activation, il va laisser passer plus ou moins (de manière grossière, ce n'est pas le comportement
 exact décris ici).
@@ -108,7 +110,7 @@ Pour comparaison, un SSD peut accéder à n'importe quelle position très rapide
 (rotation + têtes de lecture). Il présente ainsi un gros avantage face aux HDD. Mais ce n'est pas tout, coté consommation
 et résistance mécanique, il est aussi très largement avantagé par l'absence de pièces mécaniques notamment.
 
-**Mais ça, c'est le monde des bisounours...**
+**Mais ça, c'est le monde des Bisounours...**
 
 Eh oui, un SSD ça peut être conçu de plein de manières différentes, complexifiant ainsi le choix. La gamme de stockage
 flash, ça va de votre carte SD douteuse aux SSD ultra-rapides en NVMe ...
@@ -120,16 +122,16 @@ plusieurs bits par cellule. On est passé de l'interrupteur et ouvert ou fermé 
 
 Cela complexifie la mesure, et ralentis généralement le stockage.
 
-Le nombre de bits est présenté sous la forme d'une appelation : xLC.
+Le nombre de bits est présenté sous la forme d'une appellation : xLC.
 
-- SLC = Single Level Cell, soit le système présenté.
-- MLC Multi\* Level Cell (2 bits / 4 niveaux)
-- TLC (Triple Level Cell) (3 bits / 8 niveaux)
-- QLC (Quad Level Cell) (4 bits / 16 niveaux)
-- PLC (Penta Level Cell) (5 bits / 32 niveaux)
+* SLC = Single Level Cell, soit le système présenté.
+* MLC Multi\* Level Cell (2 bits / 4 niveaux)
+* TLC (Triple Level Cell) (3 bits / 8 niveaux)
+* QLC (Quad Level Cell) (4 bits / 16 niveaux)
+* PLC (Penta Level Cell) (5 bits / 32 niveaux)
 
 :::note
-Notez le petit \* après Multi de MLC, en effet MLC est souvent utilisé pour designer deux bits par cellule, cependant,
+Notez le petit \* après Multi de MLC, en effet MLC est souvent utilisé pour designer deux bits par cellule, cependant, 
 certains constructeurs (coucou Samsung) utilisent une tournure de phrase pour désigner tout ce qui n'est pas SLC. Et plus
 il y a de bits par cellule, moins cette dernière est fiable et rapide. Attention donc !
 :::
@@ -137,7 +139,7 @@ il y a de bits par cellule, moins cette dernière est fiable et rapide. Attentio
 Vitesse vs réactivité : On voit de plus en plus de fabricant vendre des SSD capables de +2 go/s, à des prix dérisoires.
 Attention ici aussi !
 
-Un SSD, ça a plusieurs caractéristiques : La vitesse et la réactivité. Le premier est généralement mis en avant, puisque
+Un SSD, ça a plusieurs caractéristiques : La vitesse et la réactivité. Le premier est habituellement mis en avant, puisque
 facile à concevoir. Lire ~250 000 000 de cellules côte à côte, c'est simple et rapide. Lire 100 cellules, puis passer à
 l'autre côté du SSD, lire 1000 cellules, puis revenir au point de départ tout en garantissant une bonne vitesse, c'est
 nettement plus compliqué !
@@ -146,9 +148,9 @@ La ou le premier se mesure en MB/s, le deuxième se mesure en IOPS (Nombre d'op�
 n'est presque jamais mis en avant (sauf sur modèles haut de gamme), mais est pourtant responsable de la majorité des
 performances dans un usage quotidien... Combien de fois installerez-vous des jeux de 100 Go et plus ? Et combien de fois
 démarrerez-vous Windows ? Combien de fois lancerez-vous vos launcher et logiciels favoris ? Ces deux usages se montrent
-très gourmant en IOPS, mais peu en débit. Attention donc !
+très gourmand en IOPS, mais peu en débit. Attention donc !
 
-Ainsi, si le budget ne vous le permet pas les deux, privilégiez un SSD bon en aléatoire par rapport à un SSD qui sort 5 Go/s,
+Ainsi, si le budget ne vous le permet pas les deux, privilégiez un SSD bon en aléatoire par rapport à un SSD qui sort 5 Go/s, 
 mais ne tient pas la cadence en aléatoire.
 
 ## Capacités : vendues vs affichées
@@ -159,26 +161,26 @@ Tout cela est parfaitement normal et dû à une incompréhension des unités inf
 
 Nous avons l'habitude de compter en base 10, c'est-à-dire que pour vous 1000 Mo = 1 Go. Sauf que l'informatique, c'est un
 monde binaire, de 0 et de 1. Et 1000 n'est pas un nombre binaire qui tombe directement sur une puissance de deux.
-La plus proche, c'est 1024, soit 2E10. Et c'est exactement de là que vient cet écart. (1 Go = 1000 Mo ; 1 Gio = 1024 Mo ...)
+La plus proche, c'est 1024, soit $2^10$. Et c'est exactement de là que vient cet écart. (1 Go = 1000 Mo ; 1 Gio = 1024 Mo ...)
 
-Windows, il affiche juste la capacité réelle en Kio, sous l'unité KB. Cela est parfaitement logique, mais notre cerveau
-d'humain s'attends à une base 10 et non 2.
+Windows, il affiche juste la capacité réelle en Kio, sous l'unité kB. Cela est parfaitement logique, mais notre cerveau
+d'humain s'attend à une base 10 et non 2.
 
 ![file](./10mb.png)
 
 Pour vous en convaincre, regardez mon fichier ci-dessus : 10 000 000 d'octets, tout rond ! Mais 9.53 Mo, ou 9766 Ko...
 (affichés dans l'explorateur de fichiers) Pourquoi ?
 
-10 000 000 / 1024 = 9765.625, à un arrondi près, vous y êtes à ce 9 766 KB. Et divisiez encore par 1024 ? 9.5367 Mo, idem
+10 000 000 / 1024 = 9765.625, à un arrondi près, vous y êtes à ce 9 766 kB. Et divisiez encore par 1024 ? 9.5367 Mo, idem
 à un arrondi près !
 
 Et ça marche pareil pour un stockage de 1 000 000 000 000 d'octets… Divisez-trois fois par 1024, et vous obtiendrez 931 Go.
 
-Pour, vous rassurez, ceci n'est que représentation numérique, vous avez bel et bien votre capacité payée. Tout est proportionnel,
+Pour, vous rassurez, ceci n'est que représentation numérique, vous avez bel et bien votre capacité payée. Tout est proportionnel, 
 vos fichiers seront, eux aussi, affichés plus petits qu'ils ne le sont en vrai.
 
 :::note
-Ce comportement est propre à Windows, sur Linux vous verriez bien la taille annonée.
+Ce comportement est propre à Windows, sur Linux, vous verriez bien la taille annoncée.
 :::
 
 ## Photo de famille
@@ -195,7 +197,7 @@ Ils représentent globalement l'évolution au cours des années : De plus en plu
 
 Ah, une photo avec un ancêtre, et un (futur ancêtre)... Nos deux PATA et SATA, quelles beautés. Ils permettent de brancher
 un stockage à un système maître, par exemple une carte mère. Le gros, large et gris (moche) Parallel-ATA (PATA ou IDE) a été
-remplacé par le petit rouge, connu sous le nom de Serial-ATA. (SATA). Ce dernier est lui aussi en voie de disparition, au
+remplacé par le petit rouge, connu sous le nom de Serial-ATA. (SATA). Ce dernier est, lui aussi, en voie de disparition, au
 profit du PCIe, via les SSD NVMe...
 
 ![sd](./SD.jpg)
@@ -203,7 +205,7 @@ profit du PCIe, via les SSD NVMe...
 Ah, la carte MMC ! Attention, malgré le fait que ça soit proche technologiquement d'un SSD, plusieurs raisons (dont le bus
 et les interfaces) les rendent lentes... Celles en photos ne vous donneront guère plus de 10 Mo/s. Et si vous pensiez ça
 disparu, raté !
-On retrouve beaucoup de cette mémoire, en version embarquée (eMMC) dans des pc portables pas chers. Certes, ça va plus vite,
+On retrouve beaucoup de cette mémoire, en version embarquée (eMMC) dans des pc portables pas chers. Certes, ça va plus vite, 
 mais avec un maximum annoncé à 600 Mo/s (donc un aléatoire nettement inférieur), ne vous attendez pas à des performances folles...
 
 ![nvme](./nvm.jpg)
@@ -211,7 +213,7 @@ mais avec un maximum annoncé à 600 Mo/s (donc un aléatoire nettement inférie
 Le NVMe. Le roi de la vitesse ! Avec une interface dédiée à haute vitesse (PCIe), il permet de battre des records de vitesse.
 Mais attention, le port M2 peut-être utilisé pour plusieurs autres choses, vérifiez bien vos compatibilités pour en tirer le meilleur...
 
-En plus, il est petit (photo d'une carte MicroSD au dessus) donc très interessant pour une grosse densité de stockage !
+En plus, il est petit (photo d'une carte MicroSD au-dessus) donc très intéressant pour une grosse densité de stockage !
 
 ## Conclusion
 

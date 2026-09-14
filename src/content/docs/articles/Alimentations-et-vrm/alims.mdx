@@ -2,11 +2,11 @@
 title: "Technique : Alimentations-et-vrm"
 ---
 
-import ArticleHeader from "../../../components/header.astro";
-import HardwareModule from "../../../components/module.astro";
-import Step from "../../../components/step.astro";
-import { Tabs, TabItem } from "@astrojs/starlight/components";
-import { Card, CardGrid } from "@astrojs/starlight/components";
+import ArticleHeader from "../../../components/header.astro"; 
+import HardwareModule from "../../../components/module.astro"; 
+import Step from "../../../components/step.astro"; 
+import { Tabs, TabItem } from "@astrojs/starlight/components"; 
+import { Card, CardGrid } from "@astrojs/starlight/components"; 
 
 <ArticleHeader tomlPath="articles/Alimentations-et-vrm/alims.toml" />
 
@@ -35,8 +35,8 @@ cette électricité, elle vient d'où ?
 
 Au début, l'électricité, c'est EDF qui gère ça, et on ne va pas regarder cette partie-là.
 
-Mais à un moment, elle arrive dans votre setup, sous la forme d'une prise murale,
-d'une tension de 230VAC. C'est beaucoup beaucoup trop pour votre PC !
+Mais à un moment, elle arrive dans votre setup, sous la forme d'une prise murale, 
+d'une tension de 230 VAC. C'est beaucoup beaucoup trop pour votre PC !
 
 En effet, "dans" le mur, la tension oscille entre +325V et -325V. ($\sqrt{2} \times 230$)
 
@@ -56,14 +56,14 @@ Transformer le 230VAC entrant en une tension bien inférieure (entre 3.3 V et 12
 Mais ? 3.3 V, c'est déjà trop ? Et oui, malgré son nom évident, elle n'est loin d'être
 la seule à être en charge des alimentations dans le PC !
 
-Une grosse partie est même faite à proximité immédiate des composants cruciaux,
+Une grosse partie est même faite à proximité immédiate des composants cruciaux, 
 pour une raison très simple : La chauffe.
 
 En effet, un câble, ou n'importe quel élément conducteur, produit de la chaleur selon la formule :
 
 $$P = R \times I^2$$
 
-Ainsi, chaque ampère (I) de plus nous revient au carré en puissance dissipée par le fil,
+Ainsi, chaque ampère (I) de plus nous revient au carré en puissance dissipée par le fil, 
 ce qui peut rapidement devenir problématique.
 
 À l'opposé, chaque volt de plus n'augmente en rien la dissipation des conducteurs.
@@ -71,7 +71,7 @@ ce qui peut rapidement devenir problématique.
 C'est donc pour ça qu'un bloc d'alimentation, ça produit des tensions entre 3.3 V et 12V
 (en produisant la majorité de la puissance sur le 12V).
 
-\*Et cette tension de 12V tends de plus à plus à être insuffisante, les puissances en jeu
+\*Et cette tension de 12V tends de plus en plus à être insuffisante, les puissances en jeu
 impliquent de trop forts courants.
 
 Un bloc d'alimentation, c'est un circuit très spécialisé, en charge de produire de fortes
@@ -108,13 +108,13 @@ petit schéma simulé avec falstad. [Une simulation de ce circuit est disponible
 
 ![sch](./sch.png)
 
-Le principe est de découper le 12V en entrée, pour en générer des pulses assez peu larges
+Le principe est de découper le 12V en entrée, pour en générer des impulsions assez peu larges
 (de l'ordre de 1/10 de la durée totale de découpe).
 
 Ensuite, nous mettons derrière cela une série de composants passifs permettant de lisser
 ces pics en une tension stable et propre.
 
-Au vu des très fort besoin en courant de nos processeurs (253W sous 1.5 V, ça fait la bagatelle de 170A...),
+Au vu des très fort besoin en courant de nos processeurs (253W sous 1.5 V, ça fait la bagatelle de 170A...), 
 nous sommes obligés de mettre en parallèle un bon nombre de ces circuits.
 
 Et ces VRM, on en retrouve à toutes les sauces dans un PC !
@@ -131,7 +131,7 @@ tension d'alimentation à partir d'une autre.
 
 Cette omniprésence est due à leur rendement, bien meilleur que les autres solutions existantes.
 
-Mais comment choisir ses VRM ? En effet, les carte mère proposent X phases (X circuits en parallèle,
+Mais comment choisir ses VRM ? En effet, les carte mère proposent X phases (X circuits en parallèle, 
 je vous ai donc montré un schéma avec quatre phases), chacune disposant d'une capacité en courant.
 
 Ainsi, une carte mère possédant 16 phases de 60A chacune sera en théorie capable de fournir
@@ -152,6 +152,7 @@ Diverses sécurités sont présentes dans votre PC, pour protéger en priorité 
 un incendie à chaque erreur ! Les alimentations protègent aussi votre PC en cas de panne.
 
 <Tabs>
+
     <TabItem label="OCP">
 
        Protège d'un courant trop élevé, indiquant donc un défaut matériel (1.1 x la puissance maximale par exemple).
@@ -159,6 +160,7 @@ un incendie à chaque erreur ! Les alimentations protègent aussi votre PC en ca
        OCP = Over Current Protection
 
     </TabItem>
+
     <TabItem label="OVP">
 
         Protège d'une tension trop élevée en sortie.
@@ -166,6 +168,7 @@ un incendie à chaque erreur ! Les alimentations protègent aussi votre PC en ca
         OVP = Over Voltage Protection
 
     </TabItem>
+
     <TabItem label="UVP">
 
         Protège d'une tension trop faible en sortie.
@@ -200,7 +203,7 @@ Elles ne sont pas conçues, et ne fonctionnement pas si vous faites n'importe qu
 
 ## Coil whine
 
-Et dernier point : le Coil Whine ! Eh oui, cet affreux sifflement, qui fait mal aux oreilles,
+Et dernier point : le coil whine ! Eh oui, cet affreux sifflement, qui fait mal aux oreilles, 
 et qui n'est pas pris en garantie bien souvent.
 
 Il prend son origine des bobines (coil en anglais). Ces bobines sont soumises à des fréquences de
@@ -212,14 +215,14 @@ résonner (= vibrer), à une fréquence audible.
 La puissance traversée par la bobine influe sur le volume sonore. C'est donc pour ça qu'une
 carte graphique peut se mettre à émettre son grincement lorsque soumise à forte charge.
 
-Il est nécéssaire de noter que le coil whine n'est en aucun cas dangereux ni pour la bobine,
+Il est nécessaire de noter que le coil whine n'est en aucun cas dangereux ni pour la bobine, 
 ni pour les composants derrière. Il n'est que chiant.
 
 Et malheureusement, contre le coil whine, il n'y a pas de solution magique. L'origine vient
 directement du choix des composants par le fabricant, et est donc lié au prix et à la gamme du produit.
 
 Un modèle haut de gamme sera moins sujet au coil whine, puisque le choix des composants a
-été fait de manière plus rigoureuse, et intégère des bobines triées pour ne pas présenter
+été fait de manière plus rigoureuse, et intègre des bobines triées pour ne pas présenter
 ce défaut, et / ou un composant à base de silicone / caoutchouc pour absorber ces vibrations.
 
 ATTENTION : Les modèles entrées de gammes peuvent aussi y échapper, non pas par la qualité
@@ -234,8 +237,8 @@ Tchuss !
 
 Et pour ceux qui veulent lire plus :
 
-- https://i.sstatic.net/Spsgx.png
-- https://en.wikipedia.org/wiki/ATX#Power_supply
-- https://www.cgdirector.com/motherboard-vrm-guide/
-- https://hwbusters.com/psus/corsair-rm1000e-gen5-psu-review/3/
-- https://www.hwcooling.net/en/in-depth-analysis-of-coil-whine-of-30-graphic-cards/
+* https://i.sstatic.net/Spsgx.png
+* https://en.wikipedia.org/wiki/ATX#Power_supply
+* https://www.cgdirector.com/motherboard-vrm-guide/
+* https://hwbusters.com/psus/corsair-rm1000e-gen5-psu-review/3/
+* https://www.hwcooling.net/en/in-depth-analysis-of-coil-whine-of-30-graphic-cards/
