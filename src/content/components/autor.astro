@@ -14,13 +14,11 @@ interface Props {
 const { pseudo, nom, role = "Auteur", avatar, date } = Astro.props;
 const isLocalImage = typeof avatar === 'object';
 
-// Prise en compte du préfixe base ('/home-hardware') pour les images du dossier public
 const basePath = import.meta.env.BASE_URL.replace(/\/$/, '');
 const avatarSrc = typeof avatar === 'string' && avatar.startsWith('/')
   ? `${basePath}${avatar}`
   : avatar;
 
-// Formatage de la date en français
 let dateAffichee: string | null = null;
 if (date) {
   const d = typeof date === 'string' ? new Date(date) : date;

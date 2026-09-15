@@ -1,0 +1,15 @@
+title = "Usb-c-:-en-fin-de-vie-?"
+slug = "articles/Usb-c-en-fin-de-vie/gpmi"
+date = "2026-09-15"
+image = "gpmi.png"
+
+[author]
+pseudo = "Maxime"
+name = "Maxime"
+role = "Modo"
+avatar = "/avatars/maxime.png"
+
+[metadata]
+title_keyword = "USBC"
+aux_keywords = ["GPMI", "USB"]
+misc_keywords = ["Chine"]

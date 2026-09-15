@@ -1,0 +1,32 @@
+---
+// src/components/CustomHead.astro
+import type { Props } from '@astrojs/starlight/props';
+import Default from '@astrojs/starlight/components/Head.astro';
+
+// Récupération moderne via les locals Starlight (avec fallback props)
+const { entry } = Astro.locals.starlightRoute ?? Astro.props;
+
+const origin = Astro.site?.origin || 'https://home-hardware.app';
+const rawCover = entry?.data?.cover;
+
+// Résolution du chemin que ce soit un asset compilé (ImageMetadata) ou une string
+let coverPath: string | undefined;
+if (typeof rawCover === 'object' && rawCover !== null && 'src' in rawCover) {
+  coverPath = rawCover.src;
+} else if (typeof rawCover === 'string') {
+  coverPath = rawCover;
+}
+
+const finalImageUrl = coverPath
+  ? new URL(coverPath, origin).toString()
+  : new URL('/icon.png', origin).toString();
+
+const cardType = coverPath ? 'summary_large_image' : 'summary';
+---
+
+<Default {...Astro.props}><slot /></Default>
+
+<meta property="og:image" content={finalImageUrl} />
+<meta name="twitter:image" content={finalImageUrl} />
+<meta name="twitter:card" content={cardType} />
+<meta name="theme-color" content="#3b82f6" />

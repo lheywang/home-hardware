@@ -1,0 +1,109 @@
+---
+title: "USB-C : En fin de vie ?"
+description: "L’USB-C déjà dépassé ?"
+cover: "gpmi.png"
+---
+
+import ArticleHeader from "../../../components/header.astro"; 
+import HardwareModule from "../../../components/module.astro"; 
+import Step from "../../../components/step.astro"; 
+import { Tabs, TabItem } from "@astrojs/starlight/components"; 
+import { Card, CardGrid } from "@astrojs/starlight/components"; 
+
+<ArticleHeader tomlPath="articles/Usb-c-en-fin-de-vie/gpmi.toml" />
+
+<p class="article-lead">
+
+	**L’USB-C déjà dépassé ?**
+
+</p>
+
+Bien le bonjour messieurs dames !
+
+Dans cet article, nous allons parler de l’héritier de l’USB-C.
+
+L’USB-C est aujourd’hui sur le toit du monde, présent partout, sur vos téléphones, vos écouteurs 
+(et boites d’écouteurs), sur vos ordinateurs, que ce soit pour la charge ou le transfert de données. 
+À moins que vous n’étiez dans le coma les 10 dernières années, vous avez forcément de l’USB-C chez vous.
+On se dit que rien ne pourrait prendre sa place… Mais c’était sans compter sur son adversaire chinois…
+
+## La Chine rentre dans la course aux normes.
+
+Face à la domination des standards informatiques sous licence (avec ou sans redevance), gérés par des 
+groupements d’entreprises, principalement américaines, comme l’HDMI, ou encore le DisplayPort géré par 
+la VESA (Video Electronics Standards Association), la Chine entend bien réduire sa dépendance technologique 
+face à l’occident.
+
+En 2021, le projet est lancé par la Shenzhen 8K UHD Video Industry Cooperation Alliance (SUCA), un consortium 
+de plus de cinquante entreprises chinoises parmi lesquelles se trouvent des géants de l’industrie comme Lenovo, 
+TCL, Xiaomi ou Huawei.
+
+En 2024, le nouveau monstre chinois est dévoilé au grand public lors du China Information Technology Expo (CITE) 
+à Shenzhen.
+Nommé le GPMI (General Purpose Multimedia Interface), ce nouveau standard est en véritable coup de force technique 
+et a de quoi faire jalouser nos câbles dans nos tiroirs.
+
+## Les caractéristiques techniques du GPMI
+
+Sa première déclinaison, le GPMI Type-B, doté d’un connecteur propriétaire et destiné à un usage industriel, est 
+une véritable autoroute de bande passante !
+La vitesse de transmissions de données est de 192 Gbit/s, associé à une charge de 480W.
+
+Quant à son petit frère, le GPMI Type-C, il est pour le moment bien plus intéressant pour le marché grand public. 
+Comme son nom l’indique, il possède un connecteur Type-C, exactement comme l’USB-C, 
+Autrement dit, le GPMI Type-C, vient se battre directement sur le terrain de l’USB-C en se rendant compatible avec 
+les divers appareils USB-C que vous possédez déjà !
+Et il faut dire qu’à ce jeu-là, le GPMI a toutes ses chances, avec une vitesse de transmissions de données annoncée 
+à 96 Gbit/s et une charge de 240W. À titre de comparaison, l’USB 4.2 associé au Thunderbolt 4 propose une vitesse de 
+40 Gbit/s (80 Gbit/s pour le Thunderbolt 5), et une charge de 240W, comme le GPMI.
+
+### Comparons :
+
+| Norme                      | Bande passante | Puissance | Alimentation | Transfert de données      | Ethernet                        |
+| :------------------------- | :------------: | :-------: | :----------: | :-----------------------: | :-----------------------------: |
+| GPMI Type B                | 192 Gbps       | 480 W     | Oui          | Oui                       | Oui                             |
+| GPMI Type C                | 96 Gbps        | 240 W     | Oui          | Oui                       | Oui                             |
+| USB-C 4.2 (Thunderbolt 5)  | 80 Gbps        | 240 W     | Oui          | Oui                       | Oui                             |
+| HDMI 2.2 (A)               | 96 Gbps        | Non       | Non          | Audio et Vidéo uniquement | Oui (aucun appareil compatible) |
+
+## Une norme unique et universelle ?
+
+Maintenant que nous connaissons les capacités du GPMI, revenons au début de l’article, vous vous demandez peut-être 
+pourquoi j’ai pris l’exemple de l’HDMI et du DisplayPort. Eh bien pour la simple et bonne raison que le GPMI compte 
+bien s’attaquer à eux aussi.
+L’objectif est simple, remplacer l’USB, l’HDMI et le DisplayPort, le tout, dans un seul câble.
+Prenez l’exemple de votre téléviseur, jusqu’ici, vous deviez utiliser un câble d’alimentation et un câble vidéo. Avec 
+le GPMI, vous pourrez les ranger, et vous contenter d’un seul câble.
+De manière généralement, vous réduisez considérablement le besoin d’adaptateurs et d’alimentations séparées.
+
+## Quel avenir pour le GPMI ?
+
+Le GPMI est commercialisé depuis à peine un an en Chine, et l’adoption s’y fait progressivement. Il n’y a pas trop 
+de doutes sur le fait que la norme s’y imposera en quelques années.
+Concernant le marché mondial, et en particulier le marché européen, c’est une autre paire de manches. Le marché de 
+l’USB-C est à maturité depuis seulement quelques années, et ce en partie grâce aux directives européennes encore 
+récentes faisant de l’USB-C la norme.
+Cette standardisation forcée risque d’être un frein à l’importation du GPMI.
+Mais tout n’est pas perdu ! Sa compatibilité avec l’USB grâce à l’interface Type-C et son vœu du tout-en-un, font 
+de lui un sérieux concurrent prometteur.
+
+## Sources
+
+### GPMI :
+
+[Norme GPMI](https://fr.wikipedia.org/wiki/General_Purpose_Multimedia_Interface)
+[GPMI (son-video)](https://blog.son-video.com/2025/04/la-fin-du-hdmi-voici-le-gpmi-la-reponse-musclee-de-la-chine/)
+[GPMI (lesnumeriques)](https://www.lesnumeriques.com/cable/la-fin-du-hdmi-est-elle-proche-voici-le-gpmi-l-alternative-chinoise-avec-480-w-de-puissance-n235261.html)
+[GPMI (next.ink)](https://next.ink/179645/avec-192-gb-s-et-480-w-le-gpmi-veut-concurrencer-le-hdmi-ou-le-displayport/)
+[GPMI (aoc)](https://www.aocfiberlink.com/fr/china-gpmi-cable-explained-difference-between-gpmi-usb-c/)
+
+### USB :
+
+[Norme USB](https://fr.wikipedia.org/wiki/USB)
+[USB-C vs USB 3.1](https://www.onlogic.com/fr/blog/usb-type-c-et-usb-3-1-expliques/)
+[USB3 vs USB4](https://fr.ugreen.com/blogs/usb-c/usb4-vs-usb3-comparaison)
+
+### HDMI :
+
+[Spécifications HDMI](https://fr.wikipedia.org/wiki/High-Definition_Multimedia_Interface#Sp%C3%A9cifications_techniques)
+[Format HDMI](https://www.son-video.com/guide/tout-comprendre-sur-le-format-hdmi)

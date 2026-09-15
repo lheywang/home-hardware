@@ -16,6 +16,7 @@
         "Gbps",
         "GDDR",
         "GPIOA",
+        "GPMI",
         "HDCP",
         "heywang",
         "JTAG",
@@ -35,6 +36,7 @@
         "Shazam",
         "slui",
         "SODIMM",
+        "SUCA",
         "swiches",
         "switchs",
         "Tbps",
@@ -48,6 +50,7 @@
         "VDSL",
         "ventirad",
         "Verilog",
+        "VESA",
         "watercooling"
     ]
 }

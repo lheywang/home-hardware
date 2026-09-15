@@ -7,7 +7,7 @@ import rehypeKatex from 'rehype-katex';
 // https://astro.build/config
 export default defineConfig({
 
-    site: 'https://https://home-hardware.app/',
+    site: 'https://home-hardware.app/',
     // base: '/home-hardware',
 
     markdown: {
@@ -18,6 +18,10 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: '/home/hardware',
+
+            components: {
+                Head: './src/content/components/head.astro',
+            },
 
             defaultLocale: 'root',
             locales: {
@@ -41,51 +45,148 @@ export default defineConfig({
 			sidebar: [
 				{
 					label: 'Articles',
+                    collapsed: false,
                     items: [
-                        "articles/alimentations-et-vrm/alims",
-                        "articles/refroidissement-airflow-et-tdp/airflow",
-                        "articles/le-gros-son-de-nos-pc/audio",
-                        "articles/cartes-meres/motherboard",
-                        "articles/processeurs/cpu",
-                        "articles/de-texte-a-processeur/rtl",
-                        "articles/un-i5-est-un-i9-rate/binning",
-                        "articles/overclocking-et-au-dela/overclocking",
-                        "articles/stockage-et-bits/stockage",
-                        "articles/ne-perdons-pas-la-memoire/memory",
-                        "articles/entre-vitesse-et-stabilite/xmp",
-                        "articles/explorons-nos-gpu/gpu",
-                        "articles/les-os/os",
-                        "articles/pilotes-et-materiel/drivers",
-                        "articles/internet-et-ips/internet",
-                        "articles/le-bottleneck/bottleneck",
-                        "articles/quand-vos-pixels-vous-mentent/screen",
-                        "articles/normes-et-magouilles/normes",  
+
+                        {
+                            label: "Alimentations",
+                            collapsed: false,
+                            items: [
+                                { label: "Alimentations et VRMs",           slug: "articles/alimentations-et-vrm/alims"},
+                                { label: "Tension et overclocking",         slug: "articles/overclocking-et-au-dela/overclocking"}
+                            ]
+                        },
+                        {
+                            label: "Visites",
+                            collapsed: false,
+                            items: [
+                                { label: "Visite d'une carte mère",         slug: "articles/cartes-meres/motherboard"},
+                                { label: "Visite d'une carte graphique",    slug: "articles/explorons-nos-gpu/gpu"}
+                            ]
+                        },
+                        {
+                            label: "Architecture & Processeurs",
+                            collapsed: false,
+                            items: [
+                                { label: "Fonctionnement d'un CPU",         slug: "articles/processeurs/cpu"},
+                                { label: "Conception d'un CPU",             slug: "articles/de-texte-a-processeur/rtl"},
+                                { label: "Gammes et triages",               slug: "articles/un-i5-est-un-i9-rate/binning"},
+                                { label: "Bottleneck et limitations",       slug: "articles/le-bottleneck/bottleneck"}
+                            ]
+                        },
+                        {
+                            label: "Stockage & Mémoire",
+                            collapsed: false,
+                            items: [
+                                { label: "Comment on stocke une donnée ?",  slug: "articles/stockage-et-bits/stockage"},
+                                { label: "Et pendant que mon pc tourne ?",  slug: "articles/ne-perdons-pas-la-memoire/memory"},
+                                { label: "L'XMP, booster gratuit !",        slug: "articles/entre-vitesse-et-stabilite/xmp"}
+                            ]
+                        },
+                        {
+                            label: "Refroidissement",
+                            collapsed: false,
+                            items: [
+                                { label: "Théorie et airflow",              slug: "articles/refroidissement-airflow-et-tdp/airflow"}
+                            ]
+                        },
+                        {
+                            label: "Audio & Analogique",
+                            collapsed: false,
+                            items: [
+                                { label: "Le gros son de nos PC",           slug: "articles/le-gros-son-de-nos-pc/audio"},
+                            ]
+                        },
+                        {
+                            label: "Systèmes d'exploitation",
+                            collapsed: false,
+                            items: [
+                                { label: "Fonctionnement d'un OS",          slug: "articles/les-os/os"},
+                                { label: "Et nos drivers ?",                slug: "articles/pilotes-et-materiel/drivers"}
+                            ]
+                        },
+                        {
+                            label: "Internet & Transferts de données",
+                            collapsed: false,
+                            items: [
+                                { label: "Internet et IPs",                 slug: "articles/internet-et-ips/internet"}
+                            ]
+                        },
+                        {
+                            label: "Standards & Normes",
+                            collapsed: false,
+                            items: [
+                                { label: "Normes et magouilles",            slug: "articles/normes-et-magouilles/normes"},
+                                { label: "GPMI, le futur USB-C ?",          slug: "articles/usb-c-en-fin-de-vie/gpmi"},
+                            ]
+                        },
+                        {
+                            label: "Affichage & Ecrans",
+                            collapsed: false,
+                            items: [
+                                { label: "Quand vos pixels vous mentent",   slug: "articles/quand-vos-pixels-vous-mentent/screen"}
+                            ]
+                        },
+                        
                     ]
                 },
                 {
                     label: 'Tutos',
+                    collapsed: false,
                     items: [
-                        "tutorials/attention-a-la-douane/douanes",
-                        "tutorials/conversion-mbr-gpt/convert",
-                        "tutorials/csm/csm",
-                        "tutorials/drivers/drivers",
-                        "tutorials/emplacement-par-defaut/emplacement",
-                        "tutorials/enceintes-qui-buzz/buzz",
-                        "tutorials/casques-micro-gaming/mics",
-                        "tutorials/bien-placer-son-micro/mics",
-                        "tutorials/formatter/format",
-                        "tutorials/partitions/partitions",
-                        "tutorials/pas-de-connexion-internet-pendant-l-installation/connexion",
-                        "tutorials/pilote-de-media-manquant/media",
-                        "tutorials/prendre-de-belles-photos/photos"
+                        {
+                            label: "Achats",
+                            collapsed: false,
+                            items: [
+                                { label: "Attention à la douane",   slug: "tutorials/attention-a-la-douane/douanes"}
+                            ]
+                        },
+                        {
+                            label: "Résolutions (Windows)",
+                            collapsed: false,
+                            items: [
+                                { label: "Conversion MBR / GPT",   slug: "tutorials/conversion-mbr-gpt/convert"},
+                                { label: "Formatter un disque",   slug: "tutorials/formatter/format"},
+                                { label: "Partitionner un disque",   slug: "tutorials/partitions/partitions"},
+                                { label: "Installer ses drivers",   slug: "tutorials/drivers/drivers"},
+                                { label: "Pilote de média manquant", slug: "tutorials/pilote-de-media-manquant/media"},
+                                { label: "Connexion internet pendant l'installation", slug: "tutorials/pas-de-connexion-internet-pendant-l-installation/connexion"},
+                                { label: "Emplacement de stockage par défaut", slug: "tutorials/emplacement-par-defaut/emplacement"}
+                            ]
+                        },
+                        {
+                            label: "Résolutions (BIOS)",
+                            collapsed: false,
+                            items: [
+                                { label: "Activer le CSM", slug: "tutorials/csm/csm"},
+                            ]
+                        },
+                        {
+                            label: "Photo",
+                            collapsed: false,
+                            items: [
+                                {label: "Prendre de belles photos", slug: "tutorials/prendre-de-belles-photos/photos"}
+                            ]
+                        },
+                        {
+                            label: "Audio",
+                            collapsed: false,
+                            items: [
+                                {label: "Enceintes qui buzz", slug: "tutorials/enceintes-qui-buzz/buzz"},
+                                {label: "Casques micro gaming", slug: "tutorials/casques-micro-gaming/mics"},
+                                {label: "Bien placer son micro", slug: "tutorials/bien-placer-son-micro/mics"}
+                            ]
+                        }
                     ]
                 },
                 {
                     label: 'Tips',
+                    collapsed: true,
                     items: []
                 },
                 {
                     label: 'Communauté',
+                    collapsed: true,
                     items: [
                         "commu/controler-ses-ventilateurs/fans",
                         "commu/fe-ou-custom/gpu",
