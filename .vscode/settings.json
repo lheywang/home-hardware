@@ -1,0 +1,27 @@
+{
+    // --- Code Spell Checker (orthographe lexicale FR + EN) ---
+    "cSpell.language": "en,fr",
+    "cSpell.enabledFileTypes": {
+        "c": true,
+        "cpp": true,
+        "python": true,
+        "markdown": true,
+        "mdx": true,
+        "git-commit": true
+    },
+    // --- LTeX+ (grammaire & syntaxe) ---
+    // Définir la langue principale (ex: "fr" ou "en-US")
+    "ltex.language": "fr",
+    "ltex.additionalRules.motherTongue": "fr",
+    // Restreindre l'analyse grammaticale aux fichiers de doc et commits
+    // pour éviter d'alourdir l'analyseur sur les gros fichiers sources
+    // Dictionnaires personnalisés pour le jargon technique
+    "ltex.dictionary": {
+        "fr": [
+            "./.vscode/ltex.fr.txt"
+        ],
+        "en-US": [
+            "./.vscode/ltex.en.txt"
+        ]
+    }
+}

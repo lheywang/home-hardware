@@ -2,8 +2,8 @@
 title: "Tuto : Pilote de média manquant pendant l'installation"
 ---
 
-import ArticleHeader from "../../../components/header.astro";
-import Step from "../../../components/step.astro";
+import ArticleHeader from "../../../components/header.astro"; 
+import Step from "../../../components/step.astro"; 
 
 <ArticleHeader tomlPath="tutorials/Pilote-de-media-manquant/media.toml" />
 
@@ -18,7 +18,9 @@ l’installation de Windows avec votre clé bootable pas de panique !
 
     Rendez-vous sur le site d’Intel et téléchargez le pilote 
     [SetupRST.exe](https://www.intel.com/content/www/us/en/download/720755/intel-rapid-storage-technology-driver-installation-software-with-intel-optane-memory-11th-up-to-13th-gen-platforms.html)
+
     
+
     À la fin du téléchargement, ouvrez le gestionnaire des fichiers et vérifier que le pilote est bien présent dans votre section Téléchargement.
 
 </Step>
@@ -29,7 +31,9 @@ l’installation de Windows avec votre clé bootable pas de panique !
     (Pour le trouver, faites un clique droit sur le SetupRST.exe puis propriétés !)
     Exemple : 
 
-    ```bash
+    
+
+```bash
     cd C:\Users\Ordinateur\Downloads\ 
     ```
 
@@ -38,8 +42,12 @@ l’installation de Windows avec votre clé bootable pas de panique !
 <Step step={3} title="Extraire le driver" tag="Terminal" open>
 
     De retour à l’étape pour choisir son disque, cliquez sur Parcourir
+
   
-    ```bash
+
+    
+
+```bash
     SetupRST.exe -extractdrivers SetupRST_extracted
     ```
 
@@ -52,11 +60,15 @@ l’installation de Windows avec votre clé bootable pas de panique !
 
 <Step step={4} title="Installer le driver" tag="Install" open>
 
-       De retour à l’étape pour choisir son disque, cliquez sur Parcourir
+    De retour à l’étape pour choisir son disque, cliquez sur Parcourir
+
   
+
     Vous allez avoir une page, il faudra suivre ce chemin :
 
-    ```
+    
+
+```
     -> SetupRST_extracted
         -> production
             -> Windows …

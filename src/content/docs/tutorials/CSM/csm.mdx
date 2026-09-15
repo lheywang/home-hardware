@@ -2,16 +2,17 @@
 title: "Tuto : Activer le CSM"
 ---
 
-import ArticleHeader from "../../../components/header.astro";
-import Step from "../../../components/step.astro";
+import ArticleHeader from "../../../components/header.astro"; 
+import Step from "../../../components/step.astro"; 
 
-import { Tabs, TabItem } from "@astrojs/starlight/components";
+import { Tabs, TabItem } from "@astrojs/starlight/components"; 
 
 <ArticleHeader tomlPath="tutorials/CSM/csm.toml" />
 
 ---
 
-Si votre ordinateur détecte vos disques de stockage dans le BIOS, mais que vous n’avez aucun disque disponible dans le menu "Boot Priority" ou "Séquence de démarrage", ne vous inquiétez pas, c’est un problème récurrent.
+Si votre ordinateur détecte vos disques de stockage dans le BIOS, mais que vous n’avez aucun disque disponible dans 
+le menu "Boot Priority" ou "Séquence de démarrage", ne vous inquiétez pas, c’est un problème récurrent.
 
 <Step step={1} title="Aller dans le bios" tag="BIOS" open>
 
@@ -19,26 +20,32 @@ Si votre ordinateur détecte vos disques de stockage dans le BIOS, mais que vous
 
     <Tabs syncKey="brand">
         <TabItem label="MSI">
+
             - Suppr (Del)
             - F11
         </TabItem>
         <TabItem label="Asus">
+
             - Suppr (Del)
             - F2
         </TabItem>
         <TabItem label="Gigabyte">
+
             - Suppr (Del)
             - F12
         </TabItem>
         <TabItem label="Asrock">
+
             - Suppr (Del)
             - F2
         </TabItem>
         <TabItem label="HP">
+
             - Echap
             - F10
         </TabItem>
         <TabItem label="Dell">
+
             - F2
         </TabItem>
     </Tabs>
@@ -51,21 +58,27 @@ Si votre ordinateur détecte vos disques de stockage dans le BIOS, mais que vous
 
     <Tabs syncKey="brand">
         <TabItem label="MSI">
+
             - F7
         </TabItem>
         <TabItem label="Asus">
+
             - F7
         </TabItem>
         <TabItem label="Gigabyte">
+
             - F2
         </TabItem>
         <TabItem label="Asrock">
+
             - F6
         </TabItem>
         <TabItem label="HP">
+
             - Ctrl + F10
         </TabItem>
         <TabItem label="Dell">
+
             - ??
         </TabItem>
     </Tabs>
@@ -78,21 +91,27 @@ Si votre ordinateur détecte vos disques de stockage dans le BIOS, mais que vous
 
     <Tabs syncKey="brand">
         <TabItem label="MSI">
+
             - Settings -> Advanced -> OS Configuration.
         </TabItem>
         <TabItem label="Asus">
+
             - BOOT (démarrage) et trouver l'onglet CSM.
         </TabItem>
         <TabItem label="Gigabyte">
+
             - BOOT (démarrage) et trouver l'onglet CSM.
         </TabItem>
         <TabItem label="Asrock">
+
             - BOOT (démarrage) et trouver l'onglet CSM.
         </TabItem>
         <TabItem label="HP">
+
             - ??
         </TabItem>
         <TabItem label="Dell">
+
             - ??
         </TabItem>
     </Tabs>
@@ -101,21 +120,27 @@ Si votre ordinateur détecte vos disques de stockage dans le BIOS, mais que vous
 
     <Tabs syncKey="brand">
         <TabItem label="MSI">
+
             - passer d'UEFI -> à CSM.
         </TabItem>
         <TabItem label="Asus">
+
             - passer de Disabled (désactivé) -> à Enabled (activé).
         </TabItem>
         <TabItem label="Gigabyte">
+
             - passer de Disabled (désactivé) -> à Enabled (activé).
         </TabItem>
         <TabItem label="Asrock">
+
             - passer de Disabled (désactivé) -> à Enabled (activé).
         </TabItem>
         <TabItem label="HP">
+
             - ??
         </TabItem>
         <TabItem label="Dell">
+
             - ??
         </TabItem>
     </Tabs>
@@ -126,7 +151,8 @@ Si votre ordinateur détecte vos disques de stockage dans le BIOS, mais que vous
 
     L’option CSM étant activée, il faut enregistrer cette modification : faire F10 puis Save and Exit (sauvegarder et quitter).
 
-    L'ordinateur va donc redémarrer et les disques seront disponibles dans la section Boot Priority. Si l'operating system (OS) n'est pas encore installé sur les disques présents. Veuillez mettre la clé USB bootable pour pouvoir commencer l'installation de l'OS avant le démarrage de celui-ci.
+    L'ordinateur va donc redémarrer et les disques seront disponibles dans la section Boot Priority. Si l'operating system (OS) 
+    n'est pas encore installé sur les disques présents. Veuillez mettre la clé USB bootable pour pouvoir commencer 
+    l'installation de l'OS avant le démarrage de celui-ci.
 
 </Step>
-

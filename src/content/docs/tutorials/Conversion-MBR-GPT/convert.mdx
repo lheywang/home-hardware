@@ -2,8 +2,8 @@
 title: "Tuto : Convertir un disque de MBR vers GPT sur Windows"
 ---
 
-import ArticleHeader from "../../../components/header.astro";
-import Step from "../../../components/step.astro";
+import ArticleHeader from "../../../components/header.astro"; 
+import Step from "../../../components/step.astro"; 
 
 <ArticleHeader tomlPath="tutorials/Conversion-MBR-GPT/convert.toml" />
 
@@ -18,10 +18,9 @@ Pour convertir un disque MBR en GPT :
 
 </Step>
 
-
 <Step step={2} title="DiskPart" tag="DiskPart" open>
 
-    ```bash
+```bash
     list disk
     select disk <remplacer par le numéro souhaité dans la liste précédente>
     clean

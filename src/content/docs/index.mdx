@@ -10,19 +10,23 @@ hero:
       link: /articles
       icon: right-arrow
       variant: primary
+
     - text: Rejoindre le Discord
       link: "https://discord.gg/R9HNVnBs6s"
       icon: discord
       variant: secondary
+
 ---
 
-import { Card, CardGrid, LinkCard } from "@astrojs/starlight/components";
+import { Card, CardGrid, LinkCard } from "@astrojs/starlight/components"; 
 
 ## Sujets principaux
 
 <CardGrid stagger>
   <Card title="Base de connaissances" icon="open-book">
+
     Des articles complets pour vulgariser des sujets en profondeur.
+
   </Card>
 
 <Card title="Systèmes & Électronique PC" icon="laptop">
@@ -35,7 +39,9 @@ import { Card, CardGrid, LinkCard } from "@astrojs/starlight/components";
 </Card>
 
   <Card title="Communauté" icon="open-book">
+
     Des articles écrit par la communauté, pour la communauté. De quoi partager vos connaissances avec les autres !
+
   </Card>
 </CardGrid>
 
@@ -45,14 +51,18 @@ import { Card, CardGrid, LinkCard } from "@astrojs/starlight/components";
 
 <CardGrid>
   <LinkCard
+
     title="Formater et partitionner un disque proprement"
     description="Initialisation GPT, partitionnement NTFS/FAT32 et récupération d'espace disque non alloué sous Windows."
     href="tutorials/formatter/format"
+
   />
   <LinkCard
+
     title="Activer et comprendre le mode CSM"
     description="Compatibilité Legacy vs UEFI, boot sur anciens supports et pièges d'amorçage."
     href="tutorials/csm/csm"
+
   />
 </CardGrid>
 
@@ -60,7 +70,7 @@ import { Card, CardGrid, LinkCard } from "@astrojs/starlight/components";
 
 ## Écosystème Discord & Recherche instantanée
 
-Une base de donnée des articles est disponible ici : `home-hardware.app/index.json`. Un [bot discord](https://github.com/lheywang/home-bot)
+Une base de donnée des articles est disponible ici : `home-hardware.app/index.json` . Un [bot discord](https://github.com/lheywang/home-bot)
 l'indexe automatiquement et propose un menu de recherche, directement dans le logiciel !
 
 Utilisez :
