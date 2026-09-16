@@ -71,7 +71,9 @@ export default defineConfig({
                                 { label: "Fonctionnement d'un CPU",         slug: "articles/processeurs/cpu"},
                                 { label: "Conception d'un CPU",             slug: "articles/de-texte-a-processeur/rtl"},
                                 { label: "Gammes et triages",               slug: "articles/un-i5-est-un-i9-rate/binning"},
-                                { label: "Bottleneck et limitations",       slug: "articles/le-bottleneck/bottleneck"}
+                                { label: "Bottleneck et limitations",       slug: "articles/le-bottleneck/bottleneck"},
+                                { label: "Mémoires et Caches",              slug: "articles/quand-votre-processeur-joue-a-cache-cache/caches"},
+                                { label: "Physique et fréquence max",       slug: "articles/pourquoi-mon-processeur-est-limite-en-frequence-max/freq"}
                             ]
                         },
                         {

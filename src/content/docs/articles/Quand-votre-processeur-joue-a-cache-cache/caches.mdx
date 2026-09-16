@@ -1,0 +1,97 @@
+---
+title: Quand-votre-processeur-joue-a-cache-cache
+description: Partons à la découverte des mécanismes de caches dans votre processeur !
+cover: cache.webp
+---
+
+import ArticleHeader from "../../../components/header.astro"; 
+import HardwareModule from "../../../components/module.astro"; 
+import Step from "../../../components/step.astro"; 
+import { Tabs, TabItem } from "@astrojs/starlight/components"; 
+import { Card, CardGrid } from "@astrojs/starlight/components"; 
+
+export const files = import.meta.glob('./data/**/*.txt', {
+  query: '?url', 
+  import: 'default', 
+  eager: true, 
+}); 
+
+<ArticleHeader tomlPath="articles/Quand-votre-processeur-joue-a-cache-cache/caches.toml" />
+
+<p class="article-lead">
+
+	Write here your recap !
+
+</p>
+
+Le cache : 
+
+On entends souvent que les CPU AMD x3D sont les meilleurs en jeux. Oui, c'est globalement le cas, mais pourquoi ? 
+Déjà, commençons par définir ce qu'est le cache.
+
+En règle générale, le terme de cache évoque une zone de stockage accessible facilement qui permet un accès plus rapide à certaines ressources.
+Par exemple, votre navigateur internet utilise un cache pour vous éviter de charger pleins de fichiers accédés régulièrement (icones, images, pages…).
+Pour votre processeur, c'est exactement la même chose, mais pour votre RAM (qui est elle-même la même chose pour votre stockage).
+
+Le cache dans un processeur est réparti en plusieurs espaces différents, par niveaux, respectivement appelés "L". Vous retrouverez donc L1, L2, et L3 généralement. 
+Certains processeurs dans l'histoire ont eu des configuration différente (Absence de L3, ou présence d'un L4). 
+Chaque niveau étant un peu plus grand, et un peu plus lent que le niveau précédent, et parfois partagé avec plusieurs cœurs.
+
+Pour donner un ordre de grandeurs, les différentes couches exposent des capacités suivantes : 
+
+L1 : XX ko / YY Ko / X cycles / Y cycles (XX = Intel, YY = AMD (non X3D)).
+L2 : XX ko / YY Ko / X cycles / Y cycles (XX = Intel, YY = AMD (non X3D)).
+L3 : XX ko / YY Ko / X cycles / Y cycles (XX = Intel, YY = AMD (non X3D)).
+RAM : ZZ Go / ZZ cycles
+
+* <a href={files['./data/mlc/intel.txt']} download="intel.txt">mlc_intel</a>
+* <a href={files['./data/mlc/amd.txt']} download="amd.txt">mlc_amd</a>
+
+Pour bien en comprendre l'utilité, il faut comparer les latences d'accès entre les différentes couches. Nous remarquerons que cette dernière explose lors d'un accès à la
+RAM. Et c'est justement cet aspect qui rends le cache utile.
+
+Quand votre processeur essaie d'accéder à une zone mémoire, il va premièrement demander au cache L1. Si ce dernier là, bingo, vous aurez un accès presque instantanné. Si ça n'est pas le cas, il descend en cache L2, qui répète l'opération. L'accès le plus lent étant celui qui descendra jusque dans votre SSD...
+
+En permettant donc un stockage localisé de la donnée, parfois de manière privée au coeur de votre processeur, il se permet un accès immédiat à la donnée sans pénalités
+d'accès. Sur les usages capables d'en exploiter les spécificités, le gain de performances peut-être massif [bloc optionnel : Les caches ayant des contraintes assez spécifiques, il est 
+nécessaire d'y adapter les algorithmes pour être capable d'en tirer le meilleur. Par exemple, cela inclus des accès très répétitifs à une faible zone mémoire, ou au contraire des accès
+très linéaire (N, puis N + 1, puis N + 2, ... puis N + M) sans réaliser de sauts. ]
+
+[ Note : Actuellement, pour du calcul haute performances, la gestion fine de la mémoire et du cache est responsable d'une grande partie des performances ! ]
+
+Mais attention à un aspect, les caches peuvent aussi être une grande source de problèmes. Par exemple, sur les premières générations de Ryzen (1000 - 2000), le cache L3 était alloué par
+groupe de quatre coeurs uniquement (à l'opposé, Intel propose un cache L3 global pour l'ensemble des coeurs). Lors de changements de contexte, c'est à dire quand votre OS transfère un 
+processus d'un coeur à un autre (c'est quelque chose de courant), un délai supplémentaire pouvait être lié au rapatriement des données d'un cache à l'autre devant alors passer
+par un lien central. C'est cet aspect qui rendait ces processeurs très efficaces sur des usages multicores (les changements étant alors rares), mais peu efficaces en jeux (les changements étant alors très fréquents). 
+
+Aussi, certains caches étant privés, il est important de s'assurer que la donnée que je possède dans mon cache n'a pas été modifiée par un autre coeur. Pour cela, un protocole spécifique est utilisé [Bloc complémentaire : Protocole MESI : 
+* M : Modified : j'ai modifié la donnée
+* E : Exclusive : Je suis le seul à posséder cette donnée
+* S : Shared : Nous sommes plusieurs à posséder cette donnée
+* I : Invalid : Quelqu'un à modifié cette donnée.
+
+Cet ensemble de flags permet de signaler à d'autres coeurs l'état de leur cache. ]
+
+On comprends donc rapidement que les caches ne pourront pas être négligés dans les performance. Historiquement, 
+les caches sont des circuits très complexes à réaliser physiquement sur le silicium, et donc... très couteux. C'est pour cela que les tailles restent relativement modestes comparées
+à la taille de la RAM. C'est justement sur cet aspect que AMD à réalisé un coup de maître, qui via la technologie X3D a réussi à graver une partie du cache sur une AUTRE puce, puis les souder ensemble, permettant une forte extension (jusqu'a x3 sur des systèmes grand publics, et jusqu'a 1 Go sur le segment serveur).
+
+Cette forte augmentation de la taille du cache L3 a eu plusieurs effets liés au volume de cache local massif :
+* Les données majeures des usages se retrouvent dans ce dernier au lieu de déborder en RAM, apportant donc un fort gain de performances.
+  Ces usages incluent, par exemple certains jeux, mais aussi logiciels (Powerpoint, et oui ce n'est pas une blague !).
+* Les données étant plus fréquemment présentes en RAM, la latence pure liée à la ram occupe un rôle moins important (d'où l'info qui circule vis à vis de la ram "lente").
+
+Bien évidemment, cette technologie ne vient pas sans inconvénients, dont les plusieurs itérations (5800x3D -> 7800x3D -> 9800x3D) ont chacune apportée une solution.
+* Sur les deux premières générations, le cache 3D était soudé au dessus de des cœurs, rendant le refroidissement plus complexe (la chaleur devant alors traverser le cache avant d'atteindre votre refroidissement). Le 7800x3D en changeant légèrement la disposition de ce dernier s'est révélé meilleur. Le 9800x3D arrive avec l'inverse, le cœur est soudé au dessus du cache, lui donnant alors un plein accès au refroidissement.
+* Sur les Ryzen 9, disposant de deux jeux de cœurs (2x 6 ou 2x 8), seul un des deux complexe est monté de cache supplémentaire. Cela complexifie les assignations d'une tache à un cœur, les systèmes mémoires n'étant plus identiques pour tous. Il faut alors analyser la tâche pour lui assigner le cœur idéal.
+* Pour les logiciels exploitant massivement de la mémoire, la présence de cache 3D n'est plus un atout majeur, devenant alors transparente.
+
+Et voilà pour cet article sur le cache !
+
+## Sources
+
+### Benchmarks utilisés :
+
+* [Intel MLC](https://www.intel.com/content/www/us/en/download/736633/intel-memory-latency-checker-intel-mlc.html)
+* [Core to Core Latency](https://github.com/nviennot/core-to-core-latency)
+* [Tinymembench](https://github.com/ssvb/tinymembench)

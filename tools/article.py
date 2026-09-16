@@ -29,8 +29,8 @@ def init_toml(file: Path, data: dict):
 
         f.write("[metadata]\n")
         f.write(f'title_keyword = "{data.get("title", "Add your main keyword !")}"\n')
-        f.write("aux_keywords = [ Add your article keywords here ]\n")
-        f.write("misc_keywords = [ Add your generic keywords here ]\n")
+        f.write('aux_keywords = [ "Add your article keywords here" ]\n')
+        f.write('misc_keywords = [ "Add your generic keywords here" ]\n')
 
 
 def init_mdx(file: Path, data: dict):
@@ -39,6 +39,10 @@ def init_mdx(file: Path, data: dict):
     with open(file, "w+") as f:
         f.write("---\n")
         f.write(f"title: {data.get("title", "Write your title here !")}\n")
+        f.write(
+            f"description: {data.get("description", "Write your description here !")}\n"
+        )
+        f.write(f"cover: {data.get("cover", "Add your cover here")}\n")
         f.write("---\n\n")
 
         f.write('import ArticleHeader from "../../../components/header.astro";\n')
@@ -52,7 +56,7 @@ def init_mdx(file: Path, data: dict):
             f'<ArticleHeader tomlPath="{data.get("slug", "Write the file slug here (path from src/content/docs/)")}.toml" />\n\n'
         )
 
-        f.write('<p class="article-lead">\n\tWrite here your recap !\n</p>\n\n')
+        f.write(f'<p class="article-lead">\n\t{data["description"]}!\n</p>\n\n')
 
 
 def create_files(base: Path, data: dict):
@@ -91,12 +95,14 @@ def main():
     data["title"] = data["title"].lower().replace(" ", "-").capitalize()
 
     type = input(
-        "Enter the type [tutorials, article, commu] starting from : src/content/docs/"
+        "Enter the type [tutorials, articles, commu] starting from : src/content/docs/"
     )
     target = input(f"Enter the file name : src/content/docs/{type}/{data['title']}/")
     data["author"] = input("Enter the author : ")
     data["name"] = input("Enter the name : ")
     data["role"] = input("Enter the role : ")
+    data["description"] = input("Enter the description : ")
+    data["cover"] = input("Enter the cover image : ")
 
     # Build the slug
     data["slug"] = f"{type}/{data['title']}/{target}"
@@ -113,6 +119,11 @@ def main():
 
     # End
     print("Done !")
+
+    print()
+    print(
+        f"Add the following slug to the list on the astro.config.mjs file : {data["slug"].lower()}"
+    )
 
 
 if __name__ == "__main__":
