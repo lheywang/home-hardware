@@ -102,9 +102,12 @@ starlight-tabs [role="tabpanel"] {
   background-color: var(--sl-color-bg);
 }
 
-table {
+.sl-markdown-content table {
+  display: table;
   width: 100%;
-  border-collapse: collapse;
+  table-layout: auto;
+  border-collapse: separate;
+  border-spacing: 0;
   margin: 1.5rem 0;
   font-size: 0.95rem;
   text-align: left;
@@ -115,32 +118,32 @@ table {
   font-variant-numeric: tabular-nums;
 }
 
-th,
-td {
+.sl-markdown-content th,
+.sl-markdown-content td {
   padding: 0.75rem 1rem;
   border-bottom: 1px solid var(--tbl-subtle);
 }
 
-th {
+.sl-markdown-content th {
   font-weight: 600;
   background-color: var(--tbl-header);
   border-bottom: 2px solid var(--tbl-border);
 }
 
-tbody tr {
+.sl-markdown-content tbody tr {
   background-color: var(--tbl-bg);
   transition: background-color 0.15s ease;
 }
 
-tbody tr:nth-child(even) {
+.sl-markdown-content tbody tr:nth-child(even) {
   background-color: var(--tbl-zebra);
 }
 
-tbody tr:hover {
+.sl-markdown-content tbody tr:hover {
   background-color: var(--tbl-hover);
 }
 
-tbody tr:last-child td {
+.sl-markdown-content tbody tr:last-child td {
   border-bottom: none;
 }
 

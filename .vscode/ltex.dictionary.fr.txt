@@ -112,3 +112,6 @@ Electronics
 Video
 SUCA
 GPMI
+x3d
+levels
+Ryzen
